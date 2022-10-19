@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Layout from "../components/Layout";
 
-export default function Home() {
-  return <h1 className="text-3xl bg-red-100 font-ibmRegular">Hello world!</h1>;
+export default function HomePage() {
+  return (
+    <Layout title="Hem">
+      <h1 className="text-3xl bg-red-100 font-ibmRegular">Hem</h1>
+    </Layout>
+  );
 }

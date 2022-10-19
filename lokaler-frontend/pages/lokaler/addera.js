@@ -1,3 +1,9 @@
+import Layout from "../../components/Layout";
+
 export default function AddLocalsPage() {
-  return <div>Lägg Till Lokal</div>;
+  return (
+    <Layout title="Lägg till lokal">
+      <h1>Lägg Till Lokal</h1>
+    </Layout>
+  );
 }
