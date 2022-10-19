@@ -52,8 +52,11 @@ module.exports = {
     extend: {
       colors: {
         navbarColor: "#ececec",
-        textColor: "#333",
+        footerColor: "#ececec",
+        textColor: "#4a4a4a",
         linkHover: "#000",
+        linkHoverFooter: "#217ff1",
+        link: "#4294f9",
       },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
