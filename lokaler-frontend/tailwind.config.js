@@ -51,15 +51,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        link: "#6A91F4",
-        linkHover: "#162ADE",
-        cards: "#FCFCFD",
-        heroBackground: "#FFFFFF",
-        orangeColor: "#FEB273",
-        defaultGray100: "#F2F2F2",
-        extendedTrueGray500: "#737373",
-        extendedTrueGray900: "#171717",
-        customNewBlue: "#BEE3FF",
+        navbarColor: "#ececec",
+        textColor: "#333",
+        linkHover: "#000",
       },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
