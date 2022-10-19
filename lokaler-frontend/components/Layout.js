@@ -7,7 +7,7 @@ export default function Layout({ title, keywords, description, children }) {
   const router = useRouter();
 
   return (
-    <div>
+    <div className=" bg-zinc-400 ">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -17,8 +17,8 @@ export default function Layout({ title, keywords, description, children }) {
       <Header />
 
       {/* {router.pathname === "/" && <Showcase />} */}
-
-      <div className="m-[60px] max-w-[960px] py-0 px-[30px]">{children}</div>
+      {/* m-[60px] max-w-[960px] py-0 px-[30px] */}
+      <div className="">{children}</div>
       <Footer />
     </div>
   );
