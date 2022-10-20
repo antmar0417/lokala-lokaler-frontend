@@ -59,6 +59,10 @@ module.exports = {
         linkHoverFooter: "#217ff1",
         link: "#4294f9",
       },
+      backgroundImage: {
+        // 'hero-pattern': "url('/img/hero-pattern.svg')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
+      },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
       },
