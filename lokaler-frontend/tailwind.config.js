@@ -60,7 +60,7 @@ module.exports = {
         link: "#4294f9",
       },
       backgroundImage: {
-        // 'hero-pattern': "url('/img/hero-pattern.svg')",
+        "hero-image": "url('/images/hero.jpeg')",
         // 'footer-texture': "url('/img/footer-texture.png')",
       },
       boxShadow: {

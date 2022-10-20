@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Header from "./Header";
 import Footer from "./Footer";
+import HeroImage from "./HeroImage";
 
 export default function Layout({ title, keywords, description, children }) {
   const router = useRouter();
@@ -16,7 +17,7 @@ export default function Layout({ title, keywords, description, children }) {
 
       <Header />
 
-      {/* {router.pathname === "/" && <Showcase />} */}
+      {router.pathname === "/" && <HeroImage />}
       {/* m-[60px] max-w-[960px] py-0 px-[30px] */}
       <div className="">{children}</div>
       <Footer />
