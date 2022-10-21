@@ -1,0 +1,35 @@
+.event {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 200px;
+  padding: 13px;
+  border-radius: 8px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  /* color: #f3cead; */
+}
+
+/* .event:last-child {
+  padding-bottom: 40px;
+} */
+
+.img {
+  flex: 1;
+  margin: 10px;
+}
+
+.info {
+  flex: 2;
+}
+
+@media (max-width: 600px) {
+  .event {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+}
