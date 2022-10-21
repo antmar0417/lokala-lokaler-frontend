@@ -1,0 +1,48 @@
+{
+  "lokaler": [
+    {
+      "id": "1",
+      "title": "Rymlig lokal i centrala Göteborg",
+      "slug": "rymlig-lokal-i-centrala-göteborg",
+      "town": "Göteborg",
+      "address": "Götgatan 10, 411 05 Göteborg",
+      "pris": 500,
+      "quantity": 20,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit urna ut libero suscipit blandit vel nec tortor.",
+      "image": "/images/sample/lokal1.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Rymlig lokal i centrala Linköping",
+      "slug": "rymlig-lokal-i-centrala-linköping",
+      "town": "Linköping",
+      "address": "Rydsvägen 80D, 584 31 Linköping",
+      "pris": 700,
+      "quantity": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit urna ut libero suscipit blandit vel nec tortor.",
+      "image": "/images/sample/lokal2.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Rymlig lokal i centrala Nyköping",
+      "slug": "rymlig-lokal-i-centrala-nyköping",
+      "town": "Nyköping",
+      "address": "Rydsvägen 80D, 584 31 Nyköping",
+      "pris": 300,
+      "quantity": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit urna ut libero suscipit blandit vel nec tortor.",
+      "image": "/images/sample/lokal3.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Rymlig lokal i centrala Stockholm",
+      "slug": "rymlig-lokal-i-centrala-stockholm",
+      "town": "Stockholm",
+      "address": "Rydsvägen 80D, 584 31 Stockholm",
+      "pris": 300,
+      "quantity": 10,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit urna ut libero suscipit blandit vel nec tortor.",
+      "image": "/images/sample/lokal4.jpg"
+    }
+  ]
+}
