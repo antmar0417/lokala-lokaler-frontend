@@ -54,7 +54,7 @@ module.exports = {
         navbarColor: "#EBEBEB",
         backgroundColor: "#F5F5F4",
         footerColor: "#EBEBEB",
-        lokacalItem: "#ffffff",
+        premiseItem: "#ffffff",
         textColor: "#4a4a4a",
         linkHover: "#000",
         buttonColor: "#0088ff",

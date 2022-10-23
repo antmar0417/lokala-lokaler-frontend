@@ -2,20 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
-import LocalItem from "@/components/LocalItem";
+import PremiseItem from "@/components/PremiseItem";
 
 export default function HomePage({ lokaler }) {
   // console.log(lokaler);
   return (
     <Layout title="Hem">
-      <div className="bg-backgroundColor min-h-[1150px] ">
+      <div className="bg-backgroundColor min-h-[900px] ">
         <h1 className="text-[40px] text-textColor pt-[60px] text-left mx-[200px] font-ibmRegular">
           Våra Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
         {lokaler.map((lkl) => (
-          <LocalItem key={lkl.id} lkl={lkl} />
-          // <h3 key={lkl.id}>{lkl.title}</h3>
+          <PremiseItem key={lkl.id} lkl={lkl} />
         ))}
       </div>
     </Layout>
@@ -28,7 +27,7 @@ export async function getStaticProps() {
   const lokaler = await res.json();
 
   return {
-    props: { lokaler },
+    props: { lokaler: lokaler.slice(0, 3) },
     // If the data has changed
     // If it does not find it will make request again within 1 sec
     revalidate: 1,

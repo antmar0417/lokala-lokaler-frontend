@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LocalItem({ lkl }) {
+export default function PremiseItem({ lkl }) {
   return (
-    <div className=" bg-lokacalItem flex flex-row justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[20px] mx-[200px] rounded-[8px] shadow-3xl ">
+    <div className=" bg-premiseItem flex flex-row justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[20px] mx-[200px] rounded-[8px] shadow-3xl ">
       <div className="basis-1/3">
         <Image
           src={lkl.image ? lkl.image : "/images/lokal-default.png"}
@@ -21,11 +21,11 @@ export default function LocalItem({ lkl }) {
         <p className=" text-[20px] ">{`Pris ${lkl.price} kr`}</p>
       </div>
 
-      <div className="inline-block bg-buttonColor hover:bg-buttonHover text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
-        <Link href={`/`}>
+      <Link href={`/lokaler/${lkl.slug}`}>
+        <button className="inline-block bg-buttonColor hover:bg-buttonHover text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
           <a>Mer Info</a>
-        </Link>
-      </div>
+        </button>
+      </Link>
     </div>
   );
 }
