@@ -51,12 +51,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        // navbarColor: "#D6EBDE",
-        navbarColor: "#3f99d5",
-        // navbarColor: "#ececec",
-        footerColor: "#D6EBDE",
+        navbarColor: "#EBEBEB",
+        backgroundColor: "#F5F5F4",
+        footerColor: "#EBEBEB",
+        lokacalItem: "#ffffff",
         textColor: "#4a4a4a",
         linkHover: "#000",
+        buttonColor: "#0088ff",
+        buttonHover: "#286eef",
         linkHoverFooter: "#217ff1",
         link: "#4294f9",
       },
