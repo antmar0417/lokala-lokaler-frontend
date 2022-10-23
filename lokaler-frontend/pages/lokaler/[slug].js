@@ -1,9 +1,80 @@
 import Layout from "@/components/Layout";
+import { API_URL } from "@/config/index";
+import Link from "next/link";
+import Image from "next/image";
+import { FaPencilAlt, FaTimes } from "react-icons/fa";
 
-export default function LocalPage() {
+export default function PremisePage({ lkl }) {
+  const deletePremise = (e) => {
+    console.log("delete");
+  };
+
   return (
-    <Layout title="Min Lokal">
-      <h1>Min Lokal</h1>
+    <Layout>
+      <div className="relative pt-[40px] mb-4 font-ibmRegular">
+        <div className="absolute right-[30px] top-[40px] ">
+          <div className="flex flex-row justify-center items-center"></div>
+        </div>
+
+        <div className=" flex flex-row justify-center items-center ">
+          <div className=" w-[750px] text-left">
+            <h3 className="text-[25px] mb-[20px]">{lkl.title}</h3>
+          </div>
+          <div className="mb-[20px] flex flex-row justify-center items-center ">
+            <Link href={`/events/edit/${lkl.id}`}>
+              <a className="flex flex-row justify-center items-center text-link">
+                {" "}
+                <FaPencilAlt className="  " /> Ändra lokal
+              </a>
+            </Link>
+            <Link href="#">
+              <a
+                className="ml-[20px] text-red-600 flex flex-row justify-center items-center "
+                onClick={deletePremise}
+              >
+                <FaTimes /> Ta bort lokal
+              </a>
+            </Link>
+          </div>
+        </div>
+        {lkl.image && (
+          <div className=" flex flex-row justify-center items-center">
+            <Image
+              className=" rounded-lg "
+              src={lkl.image}
+              width={960}
+              height={600}
+            />
+          </div>
+        )}
+        <div className=" flex flex-row justify-center items-center">
+          <div className=" w-[960px] mt-[40px] flex flex-col justify-center items-left ">
+            <p className=" text-[24px] font-bold">Address</p>
+            <p>{lkl.address}</p>
+
+            <p className=" text-[24px] font-bold">Plats för</p>
+            <p>{`${lkl.quantity} personer`}</p>
+
+            <p className=" text-[24px] font-bold">Pris</p>
+            <p>{`${lkl.price} kr`}</p>
+
+            <Link href="/lokaler">
+              <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
+            </Link>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps({ query: { slug } }) {
+  const res = await fetch(`${API_URL}/api/lokaler/${slug}`);
+  const lokaler = await res.json();
+
+  return {
+    props: {
+      lkl: lokaler[0],
+    },
+  };
 }
