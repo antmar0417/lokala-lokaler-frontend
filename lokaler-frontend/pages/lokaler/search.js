@@ -9,7 +9,7 @@ export default function SearchPage({ lokaler }) {
   const router = useRouter();
 
   return (
-    <Layout title="Search Results">
+    <Layout title="Sök Resultat">
       <div className=" mt-[40px] min-h-[680px] ">
         <Link href="/lokaler">
           <a className="text-link ml-[200px] ">{"<"} Tillbaka</a>

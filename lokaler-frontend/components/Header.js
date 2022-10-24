@@ -21,6 +21,11 @@ export default function Header() {
               <a className="hover:text-linkHover">Lokaler</a>
             </Link>
           </li>
+          <li>
+            <Link href="/lokaler/addera">
+              <a className="hover:text-linkHover ml-[20px] ">Lägg till</a>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
