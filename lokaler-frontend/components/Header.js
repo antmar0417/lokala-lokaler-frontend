@@ -1,6 +1,7 @@
 // Default exports
 import Layout from "./Layout";
 import Link from "next/link";
+import Search from "./Search";
 
 export default function Header() {
   return (
@@ -10,6 +11,8 @@ export default function Header() {
           <a className="hover:text-linkHover">LOKALA LOKALER</a>
         </Link>
       </div>
+
+      <Search />
 
       <nav>
         <ul className="flex justify-center items-center list-none">
