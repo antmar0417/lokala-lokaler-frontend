@@ -1,3 +1,4 @@
+// This is the Home Page and will show 3 premises
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "@/components/Layout";
@@ -32,11 +33,17 @@ export default function HomePage({ lokaler }) {
 
 // Updates on page will not show on page
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/lokaler`);
-  const lokaler = await res.json();
+  // Fetching data from API and sorting it by created at date and limit the premises to 3
+  const res = await fetch(
+    `${API_URL}/api/premises?populate=*&pagination[pageSize]=3&sort=createdAt:asc`
+  );
+  // const lokaler = await res.json();
+  const json = await res.json();
+  const lokaler = json.data;
 
   return {
-    props: { lokaler: lokaler.slice(0, 3) },
+    // props: { lokaler: lokaler.slice(0, 3) },
+    props: { lokaler },
     // If the data has changed
     // If it does not find it will make request again within 1 sec
     revalidate: 1,
