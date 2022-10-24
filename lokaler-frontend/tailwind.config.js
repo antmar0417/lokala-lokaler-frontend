@@ -61,6 +61,8 @@ module.exports = {
         buttonHover: "#286eef",
         linkHoverFooter: "#217ff1",
         link: "#4294f9",
+        buttonShowAll: "#232323",
+        buttonShowAllHover: "#000000",
       },
       backgroundImage: {
         "hero-image": "url('/images/hero.jpeg')",
