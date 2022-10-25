@@ -47,7 +47,7 @@ export default function PremisePage({ lkl }) {
             </div>
 
             <div className="mb-[20px] flex flex-row justify-center items-center ">
-              <Link href={`/lokaler/edit/${attributes.id}`}>
+              <Link href={`/lokaler/redigera/${lkl.id}`}>
                 <a className="flex flex-row justify-center items-center text-link">
                   {" "}
                   <FaPencilAlt className="  " /> Ändra lokal
