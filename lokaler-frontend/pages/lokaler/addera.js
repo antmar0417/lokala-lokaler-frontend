@@ -36,10 +36,12 @@ export default function AddLocalsPage() {
 
     if (hasEmptyFields) {
       toast.error("Var vänligen sriv in i alla fält");
+      // testing with return
+      return;
     }
 
     // Post rquest to Strapi
-    const res = await fetch(`${API_URL}/api/lokaler`, {
+    const res = await fetch(`${API_URL}/api/premises`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +56,7 @@ export default function AddLocalsPage() {
     } else {
       const lkl = await res.json();
       // Redirect to the premise (lokal) with the current slug
-      router.push(`/lokaler/${lkl.slug}`);
+      router.push(`/lokaler/${lkl.data.attributes.slug}`);
     }
   };
 
