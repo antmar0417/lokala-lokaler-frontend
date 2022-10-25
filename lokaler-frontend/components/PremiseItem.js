@@ -36,7 +36,7 @@ export default function PremiseItem({ lkl }) {
       </div>
 
       <Link href={`/lokaler/${attributes.slug}`}>
-        <button className="inline-block bg-buttonColor hover:bg-buttonHover focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-buttonHover text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
+        <button className="inline-block bg-buttonColor hover:bg-buttonHover  text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
           <a>Mer Info</a>
         </button>
       </Link>

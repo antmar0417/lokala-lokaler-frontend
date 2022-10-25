@@ -1,7 +1,7 @@
 // This is a page for adding a lokal
 // import { parseCookies } from "@/helpers/index";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
@@ -28,30 +28,34 @@ export default function AddLocalsPage() {
 
     console.log(values);
 
-    // const hasEmptyFields = Object.values(values).some(
-    //   (element) => element === ""
-    // );
+    // Validation for all fields
+    const hasEmptyFields = Object.values(values).some(
+      // Check if the current element is empty
+      (element) => element === ""
+    );
 
-    // if (hasEmptyFields) {
-    //   toast.error("Var vänligen sriv in i alla fält");
-    // }
+    if (hasEmptyFields) {
+      toast.error("Var vänligen sriv in i alla fält");
+    }
 
-    // const res = await fetch(`${API_URL}/api/lokaler`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     // Authorization: `Bearer ${token}`,
-    //   },
-    //   // body: JSON.stringify(values),
-    //   body: JSON.stringify({ data: values }),
-    // });
+    // Post rquest to Strapi
+    const res = await fetch(`${API_URL}/api/lokaler`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Authorization: `Bearer ${token}`,
+      },
+      // body: JSON.stringify(values),
+      body: JSON.stringify({ data: values }),
+    });
 
-    // if (!res.ok) {
-    //   toast.error("Något gick fel");
-    // } else {
-    //   const evt = await res.json();
-    //   router.push(`/lokaler/${evt.slug}`);
-    // }
+    if (!res.ok) {
+      toast.error("Något gick fel");
+    } else {
+      const lkl = await res.json();
+      // Redirect to the premise (lokal) with the current slug
+      router.push(`/lokaler/${lkl.slug}`);
+    }
   };
 
   // Taking the name and value attributes from the input
@@ -66,6 +70,7 @@ export default function AddLocalsPage() {
     <Layout title="Lägg till lokal">
       {/* h-screen w-screen  */}
       <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
+        <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
           <h1 className=" mb-[15px] text-[20px] text-textColor ">
             Lägg till lokal
@@ -163,15 +168,9 @@ export default function AddLocalsPage() {
             </div>
 
             <div>
-              {/* <input
-                type="submit"
-                value="Lägg till lokal"
-                className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              /> */}
-
               <button
                 type="submit"
-                className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-buttonHover"
+                className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
               >
                 Lägg till lokal
               </button>

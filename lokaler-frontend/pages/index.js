@@ -12,7 +12,7 @@ export default function HomePage({ lokaler }) {
     <Layout title="Hem">
       <div className="bg-backgroundColor min-h-[980px] ">
         <h1 className="text-[40px] text-textColor pt-[60px] text-left mx-[200px] font-ibmRegular">
-          Våra Lokaler
+          Senaste Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
         {lokaler.map((lkl) => (
