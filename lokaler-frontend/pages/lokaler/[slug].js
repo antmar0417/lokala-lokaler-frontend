@@ -1,8 +1,9 @@
-import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
-import Link from "next/link";
-import Image from "next/image";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
+// default exports
+import Link from "next/link";
+import Layout from "@/components/Layout";
+import Image from "next/image";
 
 export default function PremisePage({ lkl }) {
   const deletePremise = (e) => {
