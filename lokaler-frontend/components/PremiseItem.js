@@ -10,7 +10,7 @@ export default function PremiseItem({ lkl }) {
         <Image
           alt={attributes.name}
           src={
-            attributes.image
+            attributes.image && attributes.image.data
               ? attributes.image.data.attributes.formats.thumbnail.url
               : "/images/premise-default.png"
           }

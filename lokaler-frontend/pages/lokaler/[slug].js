@@ -1,13 +1,36 @@
 import { API_URL } from "@/config/index";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // default exports
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 
 export default function PremisePage({ lkl }) {
-  const deletePremise = (e) => {
-    console.log("delete");
+  // Using the router
+  const router = useRouter();
+
+  // await is allowed in async functions
+  const deletePremise = async () => {
+    // console.log("delete");
+    if (confirm("Är du säker?")) {
+      // DELETE rquest to Strapi
+      const res = await fetch(`${API_URL}/api/premises/${lkl.id}`, {
+        method: "DELETE",
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        // if something goes wrong should have a message
+        toast.error(data.messages);
+      } else {
+        // Redirect to the premises page
+        router.push("/lokaler");
+      }
+    }
   };
 
   if (lkl !== undefined) {
@@ -16,14 +39,13 @@ export default function PremisePage({ lkl }) {
     return (
       <Layout>
         <div className="relative pt-[40px] mb-4 font-ibmRegular">
-          <div className="absolute right-[30px] top-[40px] ">
-            <div className="flex flex-row justify-center items-center"></div>
-          </div>
-
           <div className=" flex flex-row justify-center items-center ">
+            <ToastContainer hideProgressBar={false} pauseOnHover />
+
             <div className=" w-[750px] text-left">
               <h3 className="text-[25px] mb-[20px]">{attributes.title}</h3>
             </div>
+
             <div className="mb-[20px] flex flex-row justify-center items-center ">
               <Link href={`/lokaler/edit/${attributes.id}`}>
                 <a className="flex flex-row justify-center items-center text-link">
@@ -41,6 +63,7 @@ export default function PremisePage({ lkl }) {
               </Link>
             </div>
           </div>
+
           <div className=" flex flex-row justify-center items-center">
             <Image
               className=" rounded-lg "
@@ -54,6 +77,7 @@ export default function PremisePage({ lkl }) {
               height={600}
             />
           </div>
+
           <div className=" flex flex-row justify-center items-center">
             <div className=" w-[960px] mt-[40px] flex flex-col justify-center items-left ">
               <p className=" text-[24px] font-bold">Address</p>
