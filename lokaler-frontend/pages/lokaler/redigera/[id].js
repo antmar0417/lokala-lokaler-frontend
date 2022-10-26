@@ -6,15 +6,15 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
 import { FaImage } from "react-icons/fa";
-// default exports
+// -------------- Default exports --------------
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import Modal from "@/components/Modal";
 
-// lkl is passed in as a prop
+// -------------- lkl is passed in as a prop --------------
 export default function EditLocalsPage({ lkl }) {
-  // State for the field
+  // -------------- State for the field --------------
   const [values, setValues] = useState({
     // id: lkl.data.id,
     title: lkl.data.attributes.title,
@@ -31,10 +31,10 @@ export default function EditLocalsPage({ lkl }) {
       : null
   );
 
-  // State for Modal component
+  // -------------- State for Modal component --------------
   const [showModal, setShowModal] = useState(false);
 
-  // Using the router
+  // -------------- Using the router --------------
   const router = useRouter();
   const id = router.query.id;
   //   console.log(id);
@@ -75,11 +75,11 @@ export default function EditLocalsPage({ lkl }) {
     }
   };
 
-  // Taking the name and value attributes from the input
+  // --- Taking the name and value attributes from the input ---
   const handleInputChange = (e) => {
-    // Destructure from e.target
+    // -------------- Destructure from e.target --------------
     const { name, value } = e.target;
-    // Setting the name to value
+    // -------------- Setting the name to value --------------
     setValues({ ...values, [name]: value });
   };
 
@@ -195,9 +195,7 @@ export default function EditLocalsPage({ lkl }) {
                     className="rounded-[5px]"
                   />
                 ) : (
-                  <div className="  ">
-                    {/* "/images/premise-default.png" */}
-                    {/* <p>Det finns ingen bild att vissa</p> */}
+                  <div className="">
                     <Image
                       src="/images/premise-default.png"
                       height={100}
@@ -206,16 +204,9 @@ export default function EditLocalsPage({ lkl }) {
                     />
                   </div>
                 )}
-
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] w-[170px] "
-                >
-                  <FaImage className=" mr-[5px] " /> Ladda upp bild
-                </button>
               </div>
 
-              <div className=" text-right pt-[75px] ">
+              <div className=" text-right pt-[80px] ">
                 <button
                   type="submit"
                   className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
@@ -225,21 +216,25 @@ export default function EditLocalsPage({ lkl }) {
               </div>
             </div>
           </form>
+
+          <button
+            onClick={() => setShowModal(true)}
+            className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] w-[170px] "
+          >
+            <FaImage className=" mr-[5px] " /> Ladda upp bild
+          </button>
+
+          {/* -------------- Using the Modal component -------------- */}
+          <Modal show={showModal} onClose={() => setShowModal(false)}>
+            {/* -------------- Uploading the image -------------- */}
+            Ladda upp bild
+          </Modal>
         </div>
 
         <Link href="/lokaler">
           <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
         </Link>
       </div>
-
-      <Modal
-        title="upload"
-        show={showModal}
-        onClose={() => setShowModal(false)}
-      >
-        {/* -------------- uploading the image -------------- */}
-        IMAGE UPLOAD
-      </Modal>
     </Layout>
   );
 }

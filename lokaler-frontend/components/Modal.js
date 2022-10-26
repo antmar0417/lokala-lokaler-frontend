@@ -1,11 +1,17 @@
+// This is a Modal component
+// The main purpose of every modal is to appear on top of the rest of the page
+// Modal component with Next.js: https://devrecipes.net/modal-component-with-next-js/
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { FaTimes } from "react-icons/fa";
 
+// -------------- The props children is the actual content --------------
 export default function Modal({ show, onClose, children, title }) {
   const [isBrowser, setIsBrowser] = useState(false);
 
-  useEffect(() => setIsBrowser(true));
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   const handleClose = (e) => {
     e.preventDefault();
