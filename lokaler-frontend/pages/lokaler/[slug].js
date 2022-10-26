@@ -37,7 +37,7 @@ export default function PremisePage({ lkl }) {
     const { attributes } = lkl;
 
     return (
-      <Layout>
+      <Layout title="Lokal">
         <div className="relative pt-[40px] mb-4 font-ibmRegular">
           <div className=" flex flex-row justify-center items-center ">
             <ToastContainer hideProgressBar={false} pauseOnHover />

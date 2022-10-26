@@ -10,6 +10,7 @@ import { FaImage } from "react-icons/fa";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
+import Modal from "@/components/Modal";
 
 // lkl is passed in as a prop
 export default function EditLocalsPage({ lkl }) {
@@ -29,6 +30,9 @@ export default function EditLocalsPage({ lkl }) {
       ? lkl.data.attributes.image.data.attributes.formats.thumbnail.url
       : null
   );
+
+  // State for Modal component
+  const [showModal, setShowModal] = useState(false);
 
   // Using the router
   const router = useRouter();
@@ -203,8 +207,11 @@ export default function EditLocalsPage({ lkl }) {
                   </div>
                 )}
 
-                <button className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] ">
-                  <FaImage className=" mr-[5px] " /> Ladda upp
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] w-[170px] "
+                >
+                  <FaImage className=" mr-[5px] " /> Ladda upp bild
                 </button>
               </div>
 
@@ -224,6 +231,15 @@ export default function EditLocalsPage({ lkl }) {
           <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
         </Link>
       </div>
+
+      <Modal
+        title="upload"
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      >
+        {/* -------------- uploading the image -------------- */}
+        IMAGE UPLOAD
+      </Modal>
     </Layout>
   );
 }
@@ -234,7 +250,6 @@ export async function getServerSideProps({ params: { id } }) {
   const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
   const lkl = await res.json();
   //   console.log(lkl);
-  console.log(lkl);
   // console.log(`id = ${lkl}`);
   // console.log(lkl.data.attributes.image.data.attributes.formats.medium.url);
 
