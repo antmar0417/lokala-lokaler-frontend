@@ -5,9 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
+import { FaImage } from "react-icons/fa";
 // default exports
 import Layout from "@/components/Layout";
 import Link from "next/link";
+import Image from "next/image";
 
 // lkl is passed in as a prop
 export default function EditLocalsPage({ lkl }) {
@@ -21,6 +23,12 @@ export default function EditLocalsPage({ lkl }) {
     quantity: lkl.data.attributes.quantity,
     description: lkl.data.attributes.description,
   });
+
+  const [imagePreview, setImagePreview] = useState(
+    lkl.data.attributes.image && lkl.data.attributes.image.data
+      ? lkl.data.attributes.image.data.attributes.formats.thumbnail.url
+      : null
+  );
 
   // Using the router
   const router = useRouter();
@@ -172,16 +180,46 @@ export default function EditLocalsPage({ lkl }) {
               ></textarea>
             </div>
 
-            <div>
-              <button
-                type="submit"
-                className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
-              >
-                Ändra lokal
-              </button>
+            <div className="grid grid-cols-2 gap-y-6">
+              <div className=" grid grid-cols-1 justify-items-start ">
+                <h2>Bild</h2>
+                {imagePreview ? (
+                  <Image
+                    src={imagePreview}
+                    height={100}
+                    width={170}
+                    className="rounded-[5px]"
+                  />
+                ) : (
+                  <div className="  ">
+                    {/* "/images/premise-default.png" */}
+                    {/* <p>Det finns ingen bild att vissa</p> */}
+                    <Image
+                      src="/images/premise-default.png"
+                      height={100}
+                      width={170}
+                      className="rounded-[5px]"
+                    />
+                  </div>
+                )}
+
+                <button className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] ">
+                  <FaImage className=" mr-[5px] " /> Ladda upp
+                </button>
+              </div>
+
+              <div className=" text-right pt-[75px] ">
+                <button
+                  type="submit"
+                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
+                >
+                  Ändra lokal
+                </button>
+              </div>
             </div>
           </form>
         </div>
+
         <Link href="/lokaler">
           <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
         </Link>
