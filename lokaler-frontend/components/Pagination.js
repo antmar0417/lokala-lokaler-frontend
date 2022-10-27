@@ -6,6 +6,9 @@ export default function Pagination({ sida, total }) {
 
   return (
     <>
+      <div className="mx-[200px] flex justify-center items-center  ">
+        <p className="bg-buttonColor px-[8px] py-[2px] rounded-[5px] text-white ">{`Sida - ${sida}`}</p>
+      </div>
       {/* -------------- Button to Previous Page -------------- */}
       {sida < lastPage && (
         <Link href={`/lokaler?sida=${sida + 1}`}>
