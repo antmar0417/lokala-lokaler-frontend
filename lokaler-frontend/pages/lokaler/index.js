@@ -19,7 +19,7 @@ export default function PremisesPage({ lokaler }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${API_URL}/api/premises?populate=*&sort=createdAt:asc`
+    `${API_URL}/api/premises?populate=*&sort=createdAt:desc`
   );
   // const lokaler = await res.json();
   const premisesData = await res.json();

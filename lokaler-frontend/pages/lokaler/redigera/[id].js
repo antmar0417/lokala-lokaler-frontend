@@ -11,6 +11,7 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import Modal from "@/components/Modal";
+import ImageUpload from "@/components/ImageUpload";
 
 // -------------- lkl is passed in as a prop --------------
 export default function EditLocalsPage({ lkl }) {
@@ -44,7 +45,7 @@ export default function EditLocalsPage({ lkl }) {
 
     // console.log(values);
 
-    // Validation for all fields
+    // -------------- Validation for all fields --------------
     const hasEmptyFields = Object.values(values).some(
       // Check if the current element is empty
       (element) => element === ""
@@ -81,6 +82,20 @@ export default function EditLocalsPage({ lkl }) {
     const { name, value } = e.target;
     // -------------- Setting the name to value --------------
     setValues({ ...values, [name]: value });
+  };
+
+  // -------------- Function for uploading an image --------------
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
+    const data = await res.json();
+    // console.log(data);
+
+    // -------------- Setting the image preview --------------
+    setImagePreview(
+      data.data.attributes.image.data.attributes.formats.thumbnail.url
+    );
+    // -------------- Closing the Modal --------------
+    setShowModal(false);
   };
 
   return (
@@ -227,7 +242,7 @@ export default function EditLocalsPage({ lkl }) {
           {/* -------------- Using the Modal component -------------- */}
           <Modal show={showModal} onClose={() => setShowModal(false)}>
             {/* -------------- Uploading the image -------------- */}
-            Ladda upp bild
+            <ImageUpload lklId={id} imageUploaded={imageUploaded} />
           </Modal>
         </div>
 

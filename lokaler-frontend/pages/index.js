@@ -35,7 +35,7 @@ export default function HomePage({ lokaler }) {
 export async function getStaticProps() {
   // Fetching data from API and sorting it by created at date and limit the premises to 3
   const res = await fetch(
-    `${API_URL}/api/premises?populate=*&pagination[pageSize]=3&sort=createdAt:asc`
+    `${API_URL}/api/premises?populate=*&pagination[pageSize]=3&sort=createdAt:desc`
   );
   // const lokaler = await res.json();
   const json = await res.json();
