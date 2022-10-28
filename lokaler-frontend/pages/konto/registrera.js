@@ -15,7 +15,11 @@ export default function RegisterPage() {
 
   const { register, error } = useContext(AuthContext);
 
-  //   useEffect(() => error && toast.error(error))
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +41,7 @@ export default function RegisterPage() {
           <h1 className="flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">
             <FaUser className=" mr-[5px] " /> Registrera
           </h1>
-          <ToastContainer />
+          <ToastContainer hideProgressBar={false} pauseOnHover />
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6">
             <div>
               <label htmlFor="username" className="sr-only">
