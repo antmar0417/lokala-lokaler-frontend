@@ -1,4 +1,4 @@
-// Module Aliases With jsconfig
+// Module Aliases for components, styles, config, context and helpers folders with jsconfig
 
 {
   "compilerOptions": {

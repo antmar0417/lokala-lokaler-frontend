@@ -2,9 +2,10 @@ import { FaUser } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect, useContext } from "react";
+// -------------- Default exports --------------
+import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
 import Layout from "@/components/Layout";
-// import AuthContext from "@/context/AuthContext";
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ export default function RegisterPage() {
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
-  //   const { register, error } = useContext(AuthContext)
+  const { register, error } = useContext(AuthContext);
 
   //   useEffect(() => error && toast.error(error))
 
@@ -24,8 +25,8 @@ export default function RegisterPage() {
       return;
     }
 
-    //   register({ username, email, password })
-    console.log({ username, email, password });
+    register({ username, email, password });
+    // console.log({ username, email, password });
   };
 
   return (
