@@ -17,7 +17,7 @@ export default async (req, res) => {
     });
 
     const data = await strapiRes.json();
-
+    // Showing the user data
     console.log({ data });
     // res.json(data);
     if (strapiRes.ok) {
