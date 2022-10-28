@@ -25,8 +25,8 @@ export default function LoginPage() {
       <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
-          <h1 className=" mb-[15px] text-[20px] text-textColor ">
-            <FaUser /> Logga In
+          <h1 className=" flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">
+            <FaUser className=" mr-[5px] " /> Logga In
           </h1>
           <ToastContainer />
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6">
@@ -75,38 +75,6 @@ export default function LoginPage() {
           </form>
         </div>
       </div>
-      {/* <div className={styles.auth}>
-        <h1>
-          <FaUser /> Logga In
-        </h1>
-        <ToastContainer />
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">E-postadress</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Lösenord</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-
-          <input type="submit" value="Login" className="btn" />
-        </form>
-
-        <p>
-          Har inget konto ? <Link href="/konto/registrera">Registrera</Link>
-        </p>
-      </div> */}
     </Layout>
   );
 }

@@ -1,4 +1,5 @@
-// Default exports
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+// -------------- Default exports --------------
 import Layout from "./Layout";
 import Link from "next/link";
 import Search from "./Search";
@@ -21,11 +22,26 @@ export default function Header() {
               <a className="hover:text-linkHover">Lokaler</a>
             </Link>
           </li>
+
           <li>
             <Link href="/lokaler/addera">
               <a className="hover:text-linkHover ml-[20px] ">Lägg till</a>
             </Link>
           </li>
+
+          <li>
+            <Link href="/konto/logga-in">
+              <a className="flex flex-row justify-center items-center bg-buttonShowAll hover:bg-buttonShowAllHover text-white px-[10px] w-[80px] py-[6px] rounded-[5px] cursor-pointer mx-[10px] text-[12px] ">
+                <FaSignInAlt className=" mr-[5px] " /> Logga in
+              </a>
+            </Link>
+          </li>
+
+          {/* <li>
+            <Link href="/konto/registrera">
+              <a>Registrera</a>
+            </Link>
+          </li> */}
         </ul>
       </nav>
     </header>

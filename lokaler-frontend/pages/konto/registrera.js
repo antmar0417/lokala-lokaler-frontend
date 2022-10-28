@@ -20,7 +20,7 @@ export default function RegisterPage() {
     e.preventDefault();
 
     if (password !== passwordConfirm) {
-      toast.error("Passwords do not match!");
+      toast.error("Lösenorden matchar inte!");
       return;
     }
 
@@ -33,8 +33,8 @@ export default function RegisterPage() {
       <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
-          <h1 className=" mb-[15px] text-[20px] text-textColor ">
-            <FaUser /> Registrera
+          <h1 className="flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">
+            <FaUser className=" mr-[5px] " /> Registrera
           </h1>
           <ToastContainer />
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6">

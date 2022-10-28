@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
-// default exports
+// -------------- Default exports --------------
 import Layout from "@/components/Layout";
 import Link from "next/link";
 
