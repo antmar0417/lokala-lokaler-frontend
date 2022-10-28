@@ -254,17 +254,18 @@ export default function EditLocalsPage({ lkl }) {
   );
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getServerSideProps({ params: { id }, req }) {
   //   const { token } = parseCookies(req);
 
+  // -------------- Fetching all premises from strapi --------------
   const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
   const lkl = await res.json();
   //   console.log(lkl);
   // console.log(`id = ${lkl}`);
   // console.log(lkl.data.attributes.image.data.attributes.formats.medium.url);
 
-  // Logging the cookie
-  // console.log(req.headers.cookie);
+  // Logging the cookie which is accessible on server side
+  console.log(req.headers.cookie);
   return {
     props: {
       lkl,
