@@ -10,7 +10,7 @@ import Layout from "@/components/Layout";
 import Link from "next/link";
 
 export default function AddLocalsPage() {
-  // State for the field
+  // -------------- State for the field --------------
   const [values, setValues] = useState({
     title: "",
     town: "",
@@ -20,7 +20,7 @@ export default function AddLocalsPage() {
     description: "",
   });
 
-  // Using the router
+  // -------------- Using the router --------------
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -28,19 +28,19 @@ export default function AddLocalsPage() {
 
     console.log(values);
 
-    // Validation for all fields
+    // --------- Validation for all fields ---------
     const hasEmptyFields = Object.values(values).some(
-      // Check if the current element is empty
+      //--- Check if the current element is empty---
       (element) => element === ""
     );
 
     if (hasEmptyFields) {
       toast.error("Var vänligen sriv in i alla fält");
-      // testing with return
+      // ---------- Testing with return ----------
       return;
     }
 
-    // Post rquest to Strapi
+    // ------------ Post rquest to Strapi ------------
     const res = await fetch(`${API_URL}/api/premises`, {
       method: "POST",
       headers: {
@@ -62,15 +62,14 @@ export default function AddLocalsPage() {
 
   // Taking the name and value attributes from the input
   const handleInputChange = (e) => {
-    // Destructure from e.target
+    // -------- Destructure from e.target --------
     const { name, value } = e.target;
-    // Setting the name to value
+    // --------- Setting the name to value ---------
     setValues({ ...values, [name]: value });
   };
 
   return (
     <Layout title="Lägg till lokal">
-      {/* h-screen w-screen  */}
       <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">

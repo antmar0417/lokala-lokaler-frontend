@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     const data = await res.json();
 
     if (res.ok) {
+      // --- Setting that user from login ---
       setUser(data.user);
       router.push("/");
     } else {
@@ -46,12 +47,12 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // --------- Logout user ---------
+  // ------------- Logout user -------------
   const logout = async () => {
     console.log("logout");
   };
 
-  // --------- Check if user is logged in ---------
+  // ------ Check if user is logged in ------
   const checkUserLoggedIn = async (user) => {
     console.log(user);
   };

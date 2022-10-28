@@ -5,6 +5,7 @@ export default async (req, res) => {
   if (req.method === "POST") {
     const { identifier, password } = req.body;
 
+    // ------------ Post rquest to Strapi ------------
     const strapiRes = await fetch(`${API_URL}/api/auth/local`, {
       method: "POST",
       headers: {
@@ -22,6 +23,8 @@ export default async (req, res) => {
     // res.json(data);
     if (strapiRes.ok) {
       //set cookie
+
+      // --------- If res ok sending back to user ------------
       res.status(200).json({ user: data.user });
     } else {
       res
