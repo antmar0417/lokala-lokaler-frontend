@@ -61,7 +61,7 @@ module.exports = {
         buttonHover: "#286eef",
         linkHoverFooter: "#217ff1",
         link: "#4294f9",
-        buttonShowAll: "#232323",
+        buttonShowAll: "#313131",
         buttonShowAllHover: "#000000",
       },
       backgroundImage: {
