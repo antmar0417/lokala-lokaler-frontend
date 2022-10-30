@@ -1,5 +1,5 @@
 // This is a page for adding a lokal
-// import { parseCookies } from "@/helpers/index";
+import { parseCookies } from "@/helpers/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 
-export default function AddLocalsPage() {
+export default function AddLocalsPage({ token }) {
   // -------------- State for the field --------------
   const [values, setValues] = useState({
     title: "",
@@ -26,7 +26,7 @@ export default function AddLocalsPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(values);
+    // console.log(values);
 
     // --------- Validation for all fields ---------
     const hasEmptyFields = Object.values(values).some(
@@ -45,13 +45,17 @@ export default function AddLocalsPage() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       // body: JSON.stringify(values),
       body: JSON.stringify({ data: values }),
     });
 
     if (!res.ok) {
+      if (res.status === 403 || res.status === 401) {
+        toast.error("Ingen token ingår");
+        return;
+      }
       toast.error("Något gick fel");
     } else {
       const lkl = await res.json();
@@ -184,4 +188,14 @@ export default function AddLocalsPage() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps({ req }) {
+  const { token } = parseCookies(req);
+
+  return {
+    props: {
+      token,
+    },
+  };
 }

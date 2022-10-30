@@ -13,25 +13,25 @@ export default function PremisePage({ lkl }) {
   const router = useRouter();
 
   // await is allowed in async functions
-  const deletePremise = async () => {
-    // console.log("delete");
-    if (confirm("Är du säker?")) {
-      // DELETE rquest to Strapi
-      const res = await fetch(`${API_URL}/api/premises/${lkl.id}`, {
-        method: "DELETE",
-      });
+  // const deletePremise = async () => {
+  //   // console.log("delete");
+  //   if (confirm("Är du säker?")) {
+  //     // DELETE rquest to Strapi
+  //     const res = await fetch(`${API_URL}/api/premises/${lkl.id}`, {
+  //       method: "DELETE",
+  //     });
 
-      const data = await res.json();
+  //     const data = await res.json();
 
-      if (!res.ok) {
-        // if something goes wrong should have a message
-        toast.error(data.messages);
-      } else {
-        // Redirect to the premises page
-        router.push("/lokaler");
-      }
-    }
-  };
+  //     if (!res.ok) {
+  //       // if something goes wrong should have a message
+  //       toast.error(data.messages);
+  //     } else {
+  //       // Redirect to the premises page
+  //       router.push("/lokaler");
+  //     }
+  //   }
+  // };
 
   if (lkl !== undefined) {
     const { attributes } = lkl;
@@ -46,7 +46,7 @@ export default function PremisePage({ lkl }) {
               <h3 className="text-[25px] mb-[20px]">{attributes.title}</h3>
             </div>
 
-            <div className="mb-[20px] flex flex-row justify-center items-center ">
+            {/* <div className="mb-[20px] flex flex-row justify-center items-center ">
               <Link href={`/lokaler/redigera/${lkl.id}`}>
                 <a className="flex flex-row justify-center items-center text-link">
                   {" "}
@@ -61,7 +61,7 @@ export default function PremisePage({ lkl }) {
                   <FaTimes /> Ta bort lokal
                 </a>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           <div className=" flex flex-row justify-center items-center">

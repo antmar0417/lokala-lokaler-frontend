@@ -1,5 +1,5 @@
 // This is a page for adding a lokal
-// import { parseCookies } from "@/helpers/index";
+import { parseCookies } from "@/helpers/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -14,7 +14,7 @@ import Modal from "@/components/Modal";
 import ImageUpload from "@/components/ImageUpload";
 
 // -------------- lkl is passed in as a prop --------------
-export default function EditLocalsPage({ lkl }) {
+export default function EditLocalsPage({ lkl, token }) {
   // -------------- State for the field --------------
   const [values, setValues] = useState({
     // id: lkl.data.id,
@@ -62,12 +62,16 @@ export default function EditLocalsPage({ lkl }) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({ data: values }),
     });
 
     if (!res.ok) {
+      if (res.status === 403 || res.status === 401) {
+        toast.error("Obehörig");
+        return;
+      }
       toast.error("Något gick fel");
     } else {
       const lkl = await res.json();
@@ -242,7 +246,11 @@ export default function EditLocalsPage({ lkl }) {
           {/* -------------- Using the Modal component -------------- */}
           <Modal show={showModal} onClose={() => setShowModal(false)}>
             {/* -------------- Uploading the image -------------- */}
-            <ImageUpload lklId={id} imageUploaded={imageUploaded} />
+            <ImageUpload
+              lklId={id}
+              imageUploaded={imageUploaded}
+              token={token}
+            />
           </Modal>
         </div>
 
@@ -255,7 +263,7 @@ export default function EditLocalsPage({ lkl }) {
 }
 
 export async function getServerSideProps({ params: { id }, req }) {
-  //   const { token } = parseCookies(req);
+  const { token } = parseCookies(req);
 
   // -------------- Fetching all premises from strapi --------------
   const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
@@ -269,6 +277,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   return {
     props: {
       lkl,
+      token,
     },
   };
 }

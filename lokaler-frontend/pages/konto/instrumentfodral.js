@@ -11,23 +11,26 @@ export default function DashboardPage({ premises, token }) {
   const router = useRouter();
 
   const deletePremise = async (id) => {
-    console.log(id);
-    // if (confirm("Är du säker?")) {
-    //   const res = await fetch(`${API_URL}/api/premises/${id}`, {
-    //     method: "DELETE",
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //     },
-    //   });
+    // ------------ logging the premise id ------------
+    // console.log(id);
 
-    //   const data = await res.json();
+    if (confirm("Är du säker?")) {
+      const res = await fetch(`${API_URL}/api/premises/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    //   if (!res.ok) {
-    //     toast.error(data.message);
-    //   } else {
-    //     router.reload();
-    //   }
-    // }
+      const data = await res.json();
+
+      if (!res.ok) {
+        toast.error(data.message);
+      } else {
+        // ----------- To stay on dashboard -----------
+        router.reload();
+      }
+    }
   };
 
   return (

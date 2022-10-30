@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API_URL } from "@/config/index";
 
-export default function ImageUpload({ lklId, imageUploaded }) {
+export default function ImageUpload({ lklId, imageUploaded, token }) {
   // -------------- Component state --------------
   const [image, setImage] = useState(null);
 
@@ -16,9 +16,9 @@ export default function ImageUpload({ lklId, imageUploaded }) {
     // -------------- Uploading the image to strapi --------------
     const res = await fetch(`${API_URL}/api/upload`, {
       method: "POST",
-      // headers: {
-      //   Authorization: `Bearer ${token}`,
-      // },
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       body: formData,
     });
 
