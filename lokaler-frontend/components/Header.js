@@ -37,8 +37,8 @@ export default function Header() {
               </li>
 
               <li>
-                <Link href="/konto/instrumentfodral">
-                  <a className="ml-[20px]">Instrument</a>
+                <Link href="/konto/instrumentpanel">
+                  <a className="ml-[20px]">Admin</a>
                 </Link>
               </li>
 

@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user);
-      router.push("/konto/instrumentfodral");
+      router.push("/konto/instrumentpanel");
     } else {
       setError(data.message);
       setError(null);
@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
     if (res.ok) {
       // --- Setting that user from login ---
       setUser(data.user);
-      router.push("/konto/instrumentfodral");
+      router.push("/konto/instrumentpanel");
     } else {
       toast.error(data.message);
       // setError(null);
