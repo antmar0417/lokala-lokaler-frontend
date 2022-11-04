@@ -35,8 +35,8 @@ export default function DashboardPage({ premises, token }) {
 
   return (
     <Layout title="instrumentpanel">
-      <div className="">
-        <h1 className="text-[40px] text-textColor pt-[60px] text-left mx-[200px] font-ibmRegular">
+      <div className=" bg-backgroundColor min-h-[780px]">
+        <h1 className="text-[40px] text-white pt-[60px] text-left mx-[200px] font-ibmRegular">
           Mina Lokaler
         </h1>
 
