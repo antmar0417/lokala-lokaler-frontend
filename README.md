@@ -1,2 +1,0 @@
-# lokala-lokaler-frontend
- 
