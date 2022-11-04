@@ -3,20 +3,26 @@ import { API_URL, PER_PAGE } from "@/config/index";
 import Layout from "@/components/Layout";
 import PremiseItem from "@/components/PremiseItem";
 import Pagination from "@/components/Pagination";
+import Search from "@/components/Search";
 
 export default function PremisesPage({ lokaler, sida, total }) {
   return (
     <Layout title="Lokaler">
-      <h1 className="text-[40px] text-textColor pt-[60px] text-left mx-[200px] font-ibmRegular">
-        Våra Lokaler
-      </h1>
-      {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
+      <div className="bg-backgroundColor ">
+        <div className="w-full flex pt-[50px] justify-center items-center ">
+          <Search />
+        </div>
+        <h1 className="text-[40px] text-white pt-[60px] text-left mx-[200px] font-ibmRegular">
+          Våra Lokaler
+        </h1>
+        {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
 
-      {lokaler.map((lkl) => (
-        <PremiseItem key={lkl.id} lkl={lkl} />
-      ))}
-      <div className="mx-[200px] pb-[60px] ">
-        <Pagination sida={sida} total={total} />
+        {lokaler.map((lkl) => (
+          <PremiseItem key={lkl.id} lkl={lkl} />
+        ))}
+        <div className="mx-[200px] pb-[60px] ">
+          <Pagination sida={sida} total={total} />
+        </div>
       </div>
     </Layout>
   );

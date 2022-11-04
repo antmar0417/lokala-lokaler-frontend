@@ -10,8 +10,8 @@ export default function HomePage({ lokaler }) {
   // console.log(lokaler);
   return (
     <Layout title="Hem">
-      <div className="bg-backgroundColor min-h-[980px] ">
-        <h1 className="text-[40px] text-textColor pt-[60px] text-left mx-[200px] font-ibmRegular">
+      <div className="bg-backgroundColor min-h-[980px] pb-[40px]">
+        <h1 className="text-[40px] text-white pt-[60px] text-left mx-[200px] font-ibmRegular">
           Senaste Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}

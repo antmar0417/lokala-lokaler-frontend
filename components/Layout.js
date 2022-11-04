@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HeroImage from "./HeroImage";
 
@@ -15,7 +15,7 @@ export default function Layout({ title, keywords, description, children }) {
         <meta name="keywords" content={keywords} />
       </Head>
 
-      <Header />
+      <Navbar />
 
       {/* Hero image shows only on homepage */}
       {router.pathname === "/" && <HeroImage />}

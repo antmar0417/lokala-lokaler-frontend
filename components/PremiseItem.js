@@ -5,7 +5,7 @@ export default function PremiseItem({ lkl }) {
   const { attributes } = lkl;
 
   return (
-    <div className=" bg-premiseItem flex flex-row justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[20px] mx-[200px] rounded-[8px] shadow-3xl ">
+    <div className=" bg-premiseItem flex flex-row justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px] mx-[200px] rounded-[8px] shadow-3xl ">
       <div className="basis-1/3">
         <Image
           alt={attributes.name}

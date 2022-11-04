@@ -52,11 +52,12 @@ module.exports = {
     extend: {
       colors: {
         navbarColor: "#EBEBEB",
-        backgroundColor: "#F5F5F4",
+        backgroundColor: "#60a5f9",
+        // backgroundColor: "#e7e7e7",
         footerColor: "#EBEBEB",
         premiseItem: "#ffffff",
         textColor: "#4a4a4a",
-        linkHover: "#000",
+        linkHover: "#e3e3e3",
         buttonColor: "#0088ff",
         buttonHover: "#286eef",
         linkHoverFooter: "#217ff1",

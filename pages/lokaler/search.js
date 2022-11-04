@@ -10,9 +10,9 @@ export default function SearchPage({ lokaler }) {
 
   return (
     <Layout title="Sök Resultat">
-      <div className=" mt-[40px] min-h-[680px] ">
+      <div className=" pt-[40px] min-h-[680px] bg-backgroundColor">
         <Link href="/lokaler">
-          <a className="text-link ml-[200px] ">{"<"} Tillbaka</a>
+          <a className="text-white ml-[200px] ">{"<"} Tillbaka</a>
         </Link>
         <h1 className=" text-[36px] ml-[200px] ">
           Resultat för {router.query.term}
