@@ -5,8 +5,10 @@ export default function PremiseItem({ lkl }) {
   const { attributes } = lkl;
 
   return (
-    <div className=" bg-premiseItem flex flex-row justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px] mx-[200px] rounded-[8px] shadow-3xl ">
-      <div className="basis-1/3">
+    <div className=" bg-premiseItem xs:flex xs:flex-col md:grid md:grid-cols-3 justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px]  xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] rounded-[8px] shadow-3xl ">
+      {/* xs:grid-rows-1 */}
+
+      <div className=" xs:text-center">
         <Image
           alt={attributes.name}
           src={
@@ -20,8 +22,8 @@ export default function PremiseItem({ lkl }) {
         />
       </div>
 
-      <div className="basis-1/2 ">
-        <p className=" text-[24px] font-bold">{attributes.town}</p>
+      <div className="xs:mt-[10px] md:mt-0 xs:pr-[40px] md:pr-[0px] ">
+        <p className="cm:text-[24px] font-bold">{attributes.town}</p>
         <p>{attributes.address}</p>
         <p>{`Plats för ${attributes.quantity} personer`}</p>
         <p>
@@ -32,14 +34,16 @@ export default function PremiseItem({ lkl }) {
             year: "numeric",
           })}
         </p>
-        <p className=" text-[20px] ">{`Pris ${attributes.price} kr`}</p>
+        <p className=" cm:text-[20px] ">{`Pris ${attributes.price} kr`}</p>
       </div>
 
-      <Link href={`/lokaler/${attributes.slug}`}>
-        <button className="inline-block bg-buttonColor hover:bg-buttonHover  text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
-          <a>Mer Info</a>
-        </button>
-      </Link>
+      <div className="xs:mt-[10px] md:mt-[0px] xs:pr-[40px] md:pr-[0px] md:justify-self-end">
+        <Link href={`/lokaler/${attributes.slug}`}>
+          <button className="inline-block bg-buttonColor hover:bg-buttonHover  text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
+            <a>Mer Info</a>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

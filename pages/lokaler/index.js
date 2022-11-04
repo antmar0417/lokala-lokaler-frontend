@@ -20,7 +20,7 @@ export default function PremisesPage({ lokaler, sida, total }) {
         {lokaler.map((lkl) => (
           <PremiseItem key={lkl.id} lkl={lkl} />
         ))}
-        <div className="mx-[200px] pb-[60px] ">
+        <div className="xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] pb-[60px] ">
           <Pagination sida={sida} total={total} />
         </div>
       </div>

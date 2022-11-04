@@ -6,8 +6,8 @@ export default function Pagination({ sida, total }) {
 
   return (
     <>
-      <div className="mx-[200px] flex justify-center items-center font-ibmRegular ">
-        <p className="bg-blue-700  px-[8px] py-[2px] rounded-[5px] text-white font-ibmRegular ">{`Sida - ${sida}`}</p>
+      <div className="xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] flex justify-center items-center font-ibmRegular ">
+        <p className="bg-blue-700  px-[8px] py-[2px] rounded-[5px] text-[16px] text-white font-ibmRegular ">{`Sida - ${sida}`}</p>
       </div>
 
       {/* -------------- Button to Previous Page -------------- */}

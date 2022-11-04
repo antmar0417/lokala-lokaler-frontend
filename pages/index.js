@@ -11,7 +11,7 @@ export default function HomePage({ lokaler }) {
   return (
     <Layout title="Hem">
       <div className="bg-backgroundColor min-h-[980px] pb-[40px]">
-        <h1 className="text-[40px] text-white pt-[60px] text-left mx-[200px] font-ibmRegular">
+        <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Senaste Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
@@ -21,7 +21,7 @@ export default function HomePage({ lokaler }) {
 
         {lokaler.length > 0 && (
           <Link href="/lokaler">
-            <button className="inline-block bg-buttonShowAll hover:bg-buttonShowAllHover text-white px-[10px] py-[10px] rounded-[5px] cursor-pointer ml-[200px] mt-[10px] ">
+            <button className="inline-block bg-buttonShowAll hover:bg-buttonShowAllHover text-white px-[10px] py-[10px] rounded-[5px] cursor-pointer xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] mt-[10px] ">
               <a>Visa Alla</a>
             </button>
           </Link>
