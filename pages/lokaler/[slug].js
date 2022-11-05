@@ -12,56 +12,20 @@ export default function PremisePage({ lkl }) {
   // Using the router
   const router = useRouter();
 
-  // await is allowed in async functions
-  // const deletePremise = async () => {
-  //   // console.log("delete");
-  //   if (confirm("Är du säker?")) {
-  //     // DELETE rquest to Strapi
-  //     const res = await fetch(`${API_URL}/api/premises/${lkl.id}`, {
-  //       method: "DELETE",
-  //     });
-
-  //     const data = await res.json();
-
-  //     if (!res.ok) {
-  //       // if something goes wrong should have a message
-  //       toast.error(data.messages);
-  //     } else {
-  //       // Redirect to the premises page
-  //       router.push("/lokaler");
-  //     }
-  //   }
-  // };
-
   if (lkl !== undefined) {
     const { attributes } = lkl;
 
     return (
       <Layout title="Lokal">
-        <div className="relative pt-[40px] mb-4 font-ibmRegular">
+        <div className="xxs:pb-[90px] cm:pb-[20px] relative pt-[40px] xxs:px-[40px] bcm:px-[0px]  font-ibmRegular bg-backgroundColor">
           <div className=" flex flex-row justify-center items-center ">
             <ToastContainer hideProgressBar={false} pauseOnHover />
 
-            <div className=" w-[750px] text-left">
-              <h3 className="text-[25px] mb-[20px]">{attributes.title}</h3>
+            <div className=" flex flex-row justify-left items-left w-[860px]">
+              <h3 className="xs:text-[24px] md:text-[40px] text-white mb-[20px]">
+                {attributes.title}
+              </h3>
             </div>
-
-            {/* <div className="mb-[20px] flex flex-row justify-center items-center ">
-              <Link href={`/lokaler/redigera/${lkl.id}`}>
-                <a className="flex flex-row justify-center items-center text-link">
-                  {" "}
-                  <FaPencilAlt className="  " /> Ändra lokal
-                </a>
-              </Link>
-              <Link href="#">
-                <a
-                  className="ml-[20px] text-red-600 flex flex-row justify-center items-center "
-                  onClick={deletePremise}
-                >
-                  <FaTimes /> Ta bort lokal
-                </a>
-              </Link>
-            </div> */}
           </div>
 
           <div className=" flex flex-row justify-center items-center">
@@ -73,13 +37,13 @@ export default function PremisePage({ lkl }) {
                   ? attributes.image.data.attributes.formats.small.url
                   : "/images/premise-default.png"
               }
-              width={960}
-              height={600}
+              width={860}
+              height={500}
             />
           </div>
 
-          <div className=" flex flex-row justify-center items-center">
-            <div className=" w-[960px] mt-[40px] flex flex-col justify-center items-left ">
+          <div className=" flex flex-row justify-center items-center text-white">
+            <div className=" w-[860px] mt-[40px] flex flex-col justify-center items-left ">
               <p className=" text-[24px] font-bold">Address</p>
               <p>{attributes.address}</p>
 
@@ -90,7 +54,9 @@ export default function PremisePage({ lkl }) {
               <p>{`${attributes.price} kr`}</p>
 
               <Link href="/lokaler">
-                <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
+                <a className=" mt-[30px] hover:text-slate-300 ">
+                  {"<"} Tillbaka
+                </a>
               </Link>
             </div>
           </div>
@@ -99,17 +65,6 @@ export default function PremisePage({ lkl }) {
     );
   }
 }
-
-// export async function getServerSideProps({ query: { slug } }) {
-//   const res = await fetch(`${API_URL}/api/lokaler/${slug}`);
-//   const lokaler = await res.json();
-
-//   return {
-//     props: {
-//       lkl: lokaler[0],
-//     },
-//   };
-// }
 
 export async function getStaticPaths() {
   const res = await fetch(`${API_URL}/api/premises?populate=*`);

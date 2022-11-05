@@ -228,7 +228,7 @@ export default function EditLocalsPage({ lkl, token }) {
               <div className=" text-right pt-[80px] ">
                 <button
                   type="submit"
-                  className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
+                  className="inline-flex justify-center xxs:py-[4px] xxs:px-[8px] cm:py-3 cm:px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover "
                 >
                   Ändra lokal
                 </button>
@@ -238,7 +238,7 @@ export default function EditLocalsPage({ lkl, token }) {
 
           <button
             onClick={() => setShowModal(true)}
-            className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] w-[170px] "
+            className="inline-flex bg-buttonShowAll hover:bg-buttonShowAllHover text-white py-[5px] px-[10px] rounded-[5px] cursor-pointer justify-center items-center text-[12px] mt-[5px] cm:w-[170px] "
           >
             <FaImage className=" mr-[5px] " /> Ladda upp bild
           </button>
@@ -254,8 +254,10 @@ export default function EditLocalsPage({ lkl, token }) {
           </Modal>
         </div>
 
-        <Link href="/lokaler">
-          <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
+        <Link href="/konto/instrumentpanel">
+          <a className="text-white hover:text-slate-300 mt-[30px] ">
+            {"<"} Tillbaka
+          </a>
         </Link>
       </div>
     </Layout>
@@ -273,7 +275,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   // console.log(lkl.data.attributes.image.data.attributes.formats.medium.url);
 
   // Logging the cookie which is accessible on server side
-  console.log(req.headers.cookie);
+  // console.log(req.headers.cookie);
   return {
     props: {
       lkl,

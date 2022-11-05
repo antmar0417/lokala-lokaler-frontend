@@ -18,7 +18,9 @@ export default function Navbar() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <a className="text-2xl text-white font-bold">LOKALA LOKALER</a>
+                <a className="xxs:text-[16px] bcm:text-2xl text-white font-bold">
+                  LOKALA LOKALER
+                </a>
               </Link>
 
               <div className="md:hidden">

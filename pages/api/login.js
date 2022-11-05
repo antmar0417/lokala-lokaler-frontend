@@ -20,7 +20,7 @@ export default async (req, res) => {
 
     const data = await strapiRes.json();
     // Showing the user data
-    console.log({ data });
+    // console.log({ data });
 
     if (strapiRes.ok) {
       // ------- Set the Cookie on the server site -------
