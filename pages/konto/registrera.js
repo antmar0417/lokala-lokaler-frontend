@@ -35,7 +35,7 @@ export default function RegisterPage() {
 
   return (
     <Layout title="Registrera">
-      <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
+      <div className="py-16 bg-backgroundColor xxs:pb-[150px] cm:pb-[90px] lg:pb-[50px] px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
           <h1 className="flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">
@@ -100,14 +100,14 @@ export default function RegisterPage() {
               />
             </div>
 
-            <div className=" grid grid-cols-2 ">
+            <div className="xxs:flex xxs:flex-col xxs:justify-center xxs:items-center sm:grid sm:grid-cols-2 ">
               <button
                 type="submit"
-                className="inline-flex justify-center py-3 px-6 border border-transparent shadow text-base font-medium rounded-md text-white bg-buttonColor hover:bg-buttonHover w-1/3 "
+                className="sm:inline-flex sm:justify-center xxs:text-[12px] md:text-[16px] text-white xxs:py-2 xxs:px-2 md:py-3 md:px-5 border border-transparent shadow font-medium rounded-md bg-buttonColor hover:bg-buttonHover xxs:w-[90px] md:w-1/3 "
               >
                 Registrera
               </button>
-              <p className="w-[220px] flex ml-[75px] justify-center items-center ">
+              <p className="md:w-[220px] flex xxs:ml-[0px] md:ml-[75px] justify-center items-center xxs:text-[12px] md:text-[16px] ">
                 Har du redan ett konto?{" "}
                 <Link href="/konto/logga-in">
                   <a className="ml-[5px] text-link">Logga in</a>
