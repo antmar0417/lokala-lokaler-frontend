@@ -11,7 +11,7 @@ export default function HomePage({ lokaler }) {
   return (
     <Layout title="Hem">
       <div className="bg-backgroundColor min-h-[980px] pb-[40px]">
-        <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
+        <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Senaste Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}

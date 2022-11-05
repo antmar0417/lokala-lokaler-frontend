@@ -183,7 +183,7 @@ export default function AddLocalsPage({ token }) {
           </form>
         </div>
         <Link href="/lokaler">
-          <a className="text-link mt-[30px] ">{"<"} Tillbaka</a>
+          <a className="text-white mt-[30px] ">{"<"} Tillbaka</a>
         </Link>
       </div>
     </Layout>

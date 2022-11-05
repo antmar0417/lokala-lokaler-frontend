@@ -12,7 +12,7 @@ export default function PremisesPage({ lokaler, sida, total }) {
         <div className="w-full flex pt-[50px] justify-center items-center ">
           <Search />
         </div>
-        <h1 className="text-[40px] text-white pt-[60px] text-left mx-[200px] font-ibmRegular">
+        <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Våra Lokaler
         </h1>
         {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}

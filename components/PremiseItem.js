@@ -3,11 +3,9 @@ import Image from "next/image";
 
 export default function PremiseItem({ lkl }) {
   const { attributes } = lkl;
-
+  // OBS space-x-[40px]
   return (
-    <div className=" bg-premiseItem xs:flex xs:flex-col md:grid md:grid-cols-3 justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px]  xs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] rounded-[8px] shadow-3xl ">
-      {/* xs:grid-rows-1 */}
-
+    <div className=" bg-premiseItem xs:flex xs:flex-col md:grid md:grid-cols-3 justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px]  xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] rounded-[8px] shadow-3xl ">
       <div className=" xs:text-center">
         <Image
           alt={attributes.name}
