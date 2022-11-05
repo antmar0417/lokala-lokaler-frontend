@@ -105,7 +105,7 @@ export default function EditLocalsPage({ lkl, token }) {
   return (
     <Layout title="Redigera lokal">
       {/* h-screen w-screen  */}
-      <div className="b py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
+      <div className="py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
           <h1 className=" mb-[15px] text-[20px] text-textColor ">

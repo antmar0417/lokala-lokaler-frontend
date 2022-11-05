@@ -14,6 +14,9 @@ export default function PremisePage({ lkl }) {
 
   if (lkl !== undefined) {
     const { attributes } = lkl;
+    // User premise email
+    const sendEmailTo = `mailto:${attributes.user.data.attributes.email}`;
+    const callTo = `tel:${attributes.user.data.attributes.phone}`;
 
     return (
       <Layout title="Lokal">
@@ -42,22 +45,73 @@ export default function PremisePage({ lkl }) {
             />
           </div>
 
-          <div className=" flex flex-row justify-center items-center text-white">
-            <div className=" w-[860px] mt-[40px] flex flex-col justify-center items-left ">
-              <p className=" text-[24px] font-bold">Address</p>
-              <p>{attributes.address}</p>
+          <div className="flex flex-row justify-center items-center text-white">
+            <div className=" w-[860px] mt-[40px] flex flex-col justify-left items-left">
+              <p className="text-[24px] font-bold">Beskrivning</p>
+              <p>{attributes.description}</p>
+            </div>
+          </div>
 
-              <p className=" text-[24px] font-bold">Plats för</p>
-              <p>{`${attributes.quantity} personer`}</p>
+          <div className="flex flex-row justify-center items-center text-white">
+            <div className="w-[860px] mt-[40px] flex flex-row items-start justify-between  text-white">
+              <div className=" flex flex-col ">
+                <p className=" text-[24px] font-bold">Address</p>
+                <p>{attributes.address}</p>
 
-              <p className=" text-[24px] font-bold">Pris</p>
-              <p>{`${attributes.price} kr`}</p>
+                <p className=" text-[24px] font-bold">Plats för</p>
+                <p>{`${attributes.quantity} personer`}</p>
 
-              <Link href="/lokaler">
-                <a className=" mt-[30px] hover:text-slate-300 ">
-                  {"<"} Tillbaka
-                </a>
-              </Link>
+                <p className=" text-[24px] font-bold">Pris</p>
+                <p>{`${attributes.price} kr`}</p>
+
+                <Link href="/lokaler">
+                  <a className=" mt-[30px] hover:text-slate-300 ">
+                    {"<"} Tillbaka
+                  </a>
+                </Link>
+              </div>
+
+              <div className="flex flex-col ">
+                <p className=" text-[24px] font-bold">Kontakt</p>
+
+                <p>
+                  E-postadress:{" "}
+                  <Link
+                    href={sendEmailTo}
+                    passHref
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                  >
+                    <a
+                      target="_blank"
+                      className="hover:text-slate-300 cursor-pointer"
+                    >
+                      {" "}
+                      {attributes.user.data.attributes.email}
+                    </a>
+                  </Link>
+                </p>
+
+                <p>
+                  Mobil:{" "}
+                  <Link
+                    href={callTo}
+                    passHref
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                  >
+                    <a
+                      target="_blank"
+                      className="hover:text-slate-300 cursor-pointer"
+                    >
+                      {" "}
+                      {attributes.user.data.attributes.phone}
+                    </a>
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
