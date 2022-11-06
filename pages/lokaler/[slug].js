@@ -120,33 +120,47 @@ export default function PremisePage({ lkl }) {
   }
 }
 
-export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/premises?populate=*`);
-  const premisesData = await res.json();
-  const lokaler = premisesData.data;
+// export async function getStaticPaths() {
+//   const res = await fetch(`${API_URL}/api/premises?populate=*`);
+//   const premisesData = await res.json();
+//   const lokaler = premisesData.data;
 
-  const paths = lokaler.map((lkl) => ({
-    params: { slug: `${lkl.slug}` }, // slug must be passed as a String
-  }));
-  return {
-    paths,
-    fallback: true, // false points to 404
-  };
-}
+//   const paths = lokaler.map((lkl) => ({
+//     params: { slug: `${lkl.slug}` }, // slug must be passed as a String
+//   }));
+//   return {
+//     paths,
+//     fallback: true, // false points to 404
+//   };
+// }
 
-export async function getStaticProps(
-  // params coming from getStaticPaths
-  { params: { slug } }
-) {
+// export async function getStaticProps(
+//   // params coming from getStaticPaths
+//   { params: { slug } }
+// ) {
+//   const res = await fetch(
+//     `${API_URL}/api/premises?filters[slug]slug=${slug}&populate=*`
+//   );
+
+//   const premisesData = await res.json();
+//   const lokaler = await premisesData.data;
+
+//   return {
+//     props: { lkl: lokaler[0] },
+//     revalidate: 1,
+//   };
+// }
+
+export async function getServerSideProps({ query: { slug } }) {
   const res = await fetch(
     `${API_URL}/api/premises?filters[slug]slug=${slug}&populate=*`
   );
 
+  // const lokaler = await res.json();
   const premisesData = await res.json();
   const lokaler = await premisesData.data;
 
   return {
     props: { lkl: lokaler[0] },
-    revalidate: 1,
   };
 }
