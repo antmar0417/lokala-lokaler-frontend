@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import Image from "next/image";
+import PremiseMap from "@/components/PremiseMap";
 
 export default function PremisePage({ lkl }) {
   // Using the router
@@ -63,12 +64,6 @@ export default function PremisePage({ lkl }) {
 
                 <p className=" text-[24px] font-bold">Pris</p>
                 <p>{`${attributes.price} kr`}</p>
-
-                <Link href="/lokaler">
-                  <a className=" mt-[30px] hover:text-slate-300 ">
-                    {"<"} Tillbaka
-                  </a>
-                </Link>
               </div>
 
               <div className="flex flex-col ">
@@ -113,6 +108,13 @@ export default function PremisePage({ lkl }) {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className=" mt-[40px] flex flex-col justify-center items-center text-white">
+            <PremiseMap lkl={lkl} />
+            <Link href="/lokaler">
+              <a className=" mt-[30px] hover:text-slate-300 ">{"<"} Tillbaka</a>
+            </Link>
           </div>
         </div>
       </Layout>
