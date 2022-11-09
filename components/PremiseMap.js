@@ -13,7 +13,7 @@ export default function PremiseMap({ lkl }) {
     longitude: 11.9668,
     width: "60vw",
     height: "60vh",
-    zoom: 12,
+    zoom: 14,
   });
 
   useEffect(() => {

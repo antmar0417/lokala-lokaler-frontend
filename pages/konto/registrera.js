@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
@@ -29,7 +30,7 @@ export default function RegisterPage() {
       return;
     }
 
-    register({ username, email, password });
+    register({ username, email, password, phone });
     // console.log({ username, email, password });
   };
 
@@ -67,6 +68,20 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-postadress"
+                className="block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-700 border-[1px] rounded-md focus:outline-none focus:ring-2"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="sr-only">
+                Telefonnummer
+              </label>
+              <input
+                type="text"
+                id="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Telefonnummer"
                 className="block w-full shadow py-3 px-4 placeholder-gray-500 focus:ring-blue-500 focus:border-blue-500 border-gray-700 border-[1px] rounded-md focus:outline-none focus:ring-2"
               />
             </div>
