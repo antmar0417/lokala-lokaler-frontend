@@ -13,7 +13,7 @@ export default function Navbar() {
     <>
       {/* <div className=" bg-slate-300 h-[30px] w-[120px] absolute top-[20px] left-1/2 transform -translate-x-1/2"></div> */}
 
-      <nav className="w-full dark:bg-gray-900 shadow-lg shadow-blue-500/50 font-ibmRegular sticky top-0 z-50">
+      <nav className="w-full bg-gray-900 shadow-lg shadow-blue-500/50 font-ibmRegular sticky top-0 z-50">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex  md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
