@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 export default function NotFoundPage() {
   return (
     <Layout title="Sidan kunde inte hittas">
-      <div className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
+      <div className="h-screen w-full flex flex-col justify-center items-center bg-backgroundColor">
         <h1 className="text-[120px] font-extrabold text-white tracking-widest">
           404
         </h1>

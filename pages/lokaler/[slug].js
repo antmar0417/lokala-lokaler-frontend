@@ -34,7 +34,7 @@ export default function PremisePage({ lkl }) {
 
           <div className=" flex flex-row justify-center items-center">
             <Image
-              className=" rounded-lg "
+              className="rounded-lg object-cover"
               alt={attributes.name}
               src={
                 attributes.image && attributes.image.data
@@ -47,15 +47,15 @@ export default function PremisePage({ lkl }) {
           </div>
 
           <div className="flex flex-row justify-center items-center text-white">
-            <div className=" w-[860px] mt-[40px] flex flex-col justify-left items-left">
-              <p className="text-[24px] font-bold">Beskrivning</p>
+            <div className="xxs:w-[194px] md:w-[860px] mt-[40px] flex flex-col justify-left items-left">
+              <p className="text-[24px] font-bold  ">Beskrivning</p>
               <p>{attributes.description}</p>
             </div>
           </div>
 
           <div className="flex flex-row justify-center items-center text-white">
-            <div className="w-[860px] mt-[40px] flex flex-row items-start justify-between  text-white">
-              <div className=" flex flex-col ">
+            <div className="w-[860px] mt-[40px] flex xxs:flex-col xxs:items-center xxs:justify-center md:flex-row md:items-start md:justify-between  text-white">
+              <div className=" xxs:w-[198px] flex flex-col ">
                 <p className=" text-[24px] font-bold">Address</p>
                 <p>{attributes.address}</p>
 
@@ -122,43 +122,11 @@ export default function PremisePage({ lkl }) {
   }
 }
 
-// export async function getStaticPaths() {
-//   const res = await fetch(`${API_URL}/api/premises?populate=*`);
-//   const premisesData = await res.json();
-//   const lokaler = premisesData.data;
-
-//   const paths = lokaler.map((lkl) => ({
-//     params: { slug: `${lkl.slug}` }, // slug must be passed as a String
-//   }));
-//   return {
-//     paths,
-//     fallback: true, // false points to 404
-//   };
-// }
-
-// export async function getStaticProps(
-//   // params coming from getStaticPaths
-//   { params: { slug } }
-// ) {
-//   const res = await fetch(
-//     `${API_URL}/api/premises?filters[slug]slug=${slug}&populate=*`
-//   );
-
-//   const premisesData = await res.json();
-//   const lokaler = await premisesData.data;
-
-//   return {
-//     props: { lkl: lokaler[0] },
-//     revalidate: 1,
-//   };
-// }
-
 export async function getServerSideProps({ query: { slug } }) {
   const res = await fetch(
     `${API_URL}/api/premises?filters[slug]slug=${slug}&populate=*`
   );
 
-  // const lokaler = await res.json();
   const premisesData = await res.json();
   const lokaler = await premisesData.data;
 

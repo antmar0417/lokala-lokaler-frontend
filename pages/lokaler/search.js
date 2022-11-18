@@ -10,18 +10,29 @@ export default function SearchPage({ lokaler }) {
 
   return (
     <Layout title="Sök Resultat">
-      <div className=" pt-[40px] min-h-[680px] bg-backgroundColor">
-        <Link href="/lokaler">
-          <a className="text-white ml-[200px] ">{"<"} Tillbaka</a>
-        </Link>
-        <h1 className=" text-[36px] ml-[200px] ">
-          Resultat för {router.query.term}
-        </h1>
-        {lokaler.length === 0 && <h3>Det finns inga lokaler att vissa</h3>}
+      <div className=" pt-[40px] min-h-[90vh] pb-[80px] bg-backgroundColor">
+        <div className="flex flex-col justify-center items-center text-white">
+          <h1 className=" xxs:text-[24px] md:text-[36px]  ">
+            Resultat för {router.query.term}
+          </h1>
+        </div>
+        {lokaler.length === 0 && (
+          <div className="flex flex-row justify-center items-center text-white">
+            <h3 className="xxs:text-[24px] md:text-[36px] mt-[180px] ">
+              Det finns inga lokaler att vissa
+            </h3>
+          </div>
+        )}
 
         {lokaler.map((lkl) => (
           <PremiseItem key={lkl.id} lkl={lkl} />
         ))}
+
+        <div className="flex flex-row justify-center items-center text-white">
+          <Link href="/lokaler">
+            <a className=" mt-[40px] ">{"<"} Tillbaka</a>
+          </Link>
+        </div>
       </div>
     </Layout>
   );
