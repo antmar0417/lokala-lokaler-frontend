@@ -1,6 +1,7 @@
-import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import { API_URL } from "@/config/index";
+// -------------- Default exports --------------
+import Layout from "@/components/Layout";
 import PremiseItem from "@/components/PremiseItem";
 import qs from "qs";
 import Link from "next/link";

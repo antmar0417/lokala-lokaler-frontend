@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function PremiseItem({ lkl }) {
   const { attributes } = lkl;
-  // OBS space-x-[40px]
+
   return (
-    <div className=" bg-premiseItem xs:flex xs:flex-col md:grid md:grid-cols-3 justify-center items-center space-x-[40px] font-ibmRegular p-[13px] my-[40px]  xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] rounded-[8px] shadow-3xl ">
+    <div className=" bg-premiseItem xs:flex xs:flex-col md:grid md:grid-cols-3 justify-center items-center xxs:space-x-[0px] md:space-x-[40px] font-ibmRegular p-[13px] my-[40px]  xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] rounded-[8px] shadow-3xl ">
       <div className=" xs:text-center">
         <Image
           alt={attributes.name}
@@ -16,11 +16,11 @@ export default function PremiseItem({ lkl }) {
           }
           width={401}
           height={235}
-          className="rounded-md"
+          className="rounded-lg object-cover"
         />
       </div>
 
-      <div className="xs:mt-[10px] md:mt-0 xs:pr-[40px] md:pr-[0px] ">
+      <div className="xs:mt-[10px] md:mt-0  ">
         <p className="cm:text-[24px] font-bold">{attributes.town}</p>
         <p>{attributes.address}</p>
         <p>{`Plats för ${attributes.quantity} personer`}</p>

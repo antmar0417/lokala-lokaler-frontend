@@ -7,12 +7,9 @@ import DashboardPremise from "@/components/DashboardPremise";
 
 export default function DashboardPage({ premises, token }) {
   // ------------ logging the premises ------------
-  // console.log(premises);
   const router = useRouter();
-
   const deletePremise = async (id) => {
     // ------------ logging the premise id ------------
-    // console.log(id);
 
     if (confirm("Är du säker?")) {
       const res = await fetch(`${API_URL}/api/premises/${id}`, {
@@ -46,10 +43,6 @@ export default function DashboardPage({ premises, token }) {
             lkl={lkl}
             handleDelete={deletePremise}
           />
-
-          // <h1 key={lkl.id} lkl={lkl}>
-          //   {lkl.title}
-          // </h1>
         ))}
       </div>
     </Layout>
@@ -58,9 +51,6 @@ export default function DashboardPage({ premises, token }) {
 
 export async function getServerSideProps({ req }) {
   const { token } = parseCookies(req);
-
-  // Logging the token
-  // console.log(token);
 
   const res = await fetch(`${API_URL}/api/premises/me`, {
     method: "GET",

@@ -25,9 +25,6 @@ export default function AddLocalsPage({ token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // console.log(values);
-
     // --------- Validation for all fields ---------
     const hasEmptyFields = Object.values(values).some(
       //--- Check if the current element is empty---
@@ -47,7 +44,6 @@ export default function AddLocalsPage({ token }) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      // body: JSON.stringify(values),
       body: JSON.stringify({ data: values }),
     });
 

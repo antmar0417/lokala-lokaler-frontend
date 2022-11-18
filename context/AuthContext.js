@@ -9,10 +9,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  // Test with user
-  // const [user, setUser] = useState({ name: "Anton" });
   const [error, setError] = useState(null);
-
   const router = useRouter();
 
   useEffect(() => {
@@ -61,7 +58,6 @@ export const AuthProvider = ({ children }) => {
       router.push("/konto/instrumentpanel");
     } else {
       toast.error(data.message);
-      // setError(null);
     }
   };
 
@@ -96,5 +92,5 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// exporting to _app.js
+// Using in _app.js
 export default AuthContext;

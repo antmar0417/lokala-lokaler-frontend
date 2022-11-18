@@ -1,5 +1,6 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
+// -------------- Default exports --------------
+import Head from "next/head";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HeroImage from "./HeroImage";
@@ -19,7 +20,6 @@ export default function Layout({ title, keywords, description, children }) {
 
       {/* Hero image shows only on homepage */}
       {router.pathname === "/" && <HeroImage />}
-      {/* m-[60px] max-w-[960px] py-0 px-[30px] */}
       <div className="">{children}</div>
       <Footer />
     </>

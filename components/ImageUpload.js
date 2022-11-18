@@ -30,7 +30,6 @@ export default function ImageUpload({ lklId, imageUploaded, token }) {
 
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
-    // console.log(e.target.files[0]);
   };
 
   return (

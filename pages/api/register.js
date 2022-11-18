@@ -21,7 +21,7 @@ export default async (req, res) => {
     const data = await strapiRes.json();
 
     if (strapiRes.ok) {
-      // Set Cookie
+      // ---------- Set Cookie ----------
       res.setHeader(
         "Set-Cookie",
         cookie.serialize("token", data.jwt, {
@@ -35,10 +35,7 @@ export default async (req, res) => {
 
       res.status(200).json({ user: data.user });
     } else {
-      res
-        .status(data.error.status)
-        // .json({ message: data.message[0].messages[0].message });
-        .json({ message: data.error.message });
+      res.status(data.error.status).json({ message: data.error.message });
     }
   } else {
     res.setHeader("Allow", ["POST"]);

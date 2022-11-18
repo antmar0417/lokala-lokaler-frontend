@@ -31,7 +31,6 @@ export default function RegisterPage() {
     }
 
     register({ username, email, password, phone });
-    // console.log({ username, email, password });
   };
 
   return (

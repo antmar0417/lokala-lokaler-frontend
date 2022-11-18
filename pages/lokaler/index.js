@@ -52,17 +52,3 @@ export async function getServerSideProps({ query: { sida = 1 } }) {
     },
   };
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch(
-//     `${API_URL}/api/premises?populate=*&sort=createdAt:desc`
-//   );
-//   // const lokaler = await res.json();
-//   const premisesData = await res.json();
-//   const lokaler = premisesData.data;
-
-//   return {
-//     props: { lokaler },
-//     revalidate: 1,
-//   };
-// }

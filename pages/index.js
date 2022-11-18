@@ -1,13 +1,13 @@
 // This is the Home Page and will show 3 premises
+import { API_URL } from "@/config/index";
+// -------------- Default exports --------------
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "@/components/Layout";
-import { API_URL } from "@/config/index";
 import PremiseItem from "@/components/PremiseItem";
 import Link from "next/link";
 
 export default function HomePage({ lokaler }) {
-  // console.log(lokaler);
   return (
     <Layout title="Hem">
       <div className="bg-backgroundColor min-h-[980px] pb-[40px]">
@@ -42,7 +42,6 @@ export async function getStaticProps() {
   const lokaler = json.data;
 
   return {
-    // props: { lokaler: lokaler.slice(0, 3) },
     props: { lokaler },
     // If the data has changed
     // If it does not find it will make request again within 1 sec

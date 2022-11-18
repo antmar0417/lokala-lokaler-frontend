@@ -17,7 +17,6 @@ import ImageUpload from "@/components/ImageUpload";
 export default function EditLocalsPage({ lkl, token }) {
   // -------------- State for the field --------------
   const [values, setValues] = useState({
-    // id: lkl.data.id,
     title: lkl.data.attributes.title,
     town: lkl.data.attributes.town,
     address: lkl.data.attributes.address,
@@ -38,12 +37,9 @@ export default function EditLocalsPage({ lkl, token }) {
   // -------------- Using the router --------------
   const router = useRouter();
   const id = router.query.id;
-  //   console.log(id);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // console.log(values);
 
     // -------------- Validation for all fields --------------
     const hasEmptyFields = Object.values(values).some(
@@ -104,7 +100,6 @@ export default function EditLocalsPage({ lkl, token }) {
 
   return (
     <Layout title="Redigera lokal">
-      {/* h-screen w-screen  */}
       <div className="py-16 bg-backgroundColor px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
@@ -270,12 +265,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   // -------------- Fetching all premises from strapi --------------
   const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
   const lkl = await res.json();
-  //   console.log(lkl);
-  // console.log(`id = ${lkl}`);
-  // console.log(lkl.data.attributes.image.data.attributes.formats.medium.url);
 
-  // Logging the cookie which is accessible on server side
-  // console.log(req.headers.cookie);
   return {
     props: {
       lkl,

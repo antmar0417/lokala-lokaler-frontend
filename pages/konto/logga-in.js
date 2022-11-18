@@ -15,7 +15,6 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (error) {
-      // console.log("error", error);
       toast.error(error);
     }
   }, [error]);
@@ -23,7 +22,6 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     login({ email, password });
-    // console.log({ email, password });
   };
 
   return (

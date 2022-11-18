@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
 
-// OBS space-x-[40px]
 export default function DashboardEvent({ lkl, handleDelete }) {
   return (
     <div className=" flex xxs:flex-col bcm:flex-row justify-center items-center bcm:space-x-[40px] font-ibmRegular p-[13px] my-[20px] xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] h-[120px] rounded-[8px] shadow-3xl bg-premiseItem">
