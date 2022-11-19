@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import PremiseItem from "@/components/PremiseItem";
 import Pagination from "@/components/Pagination";
 import Search from "@/components/Search";
-import Link from "next/link";
+import DropDown from "@/components/DropDown";
 
 export default function PremisesPage({ lokaler, sida, total }) {
   return (
@@ -14,11 +14,7 @@ export default function PremisesPage({ lokaler, sida, total }) {
           <Search />
         </div>
 
-        <Link href="/lokaler/pris">
-          <a className=" mt-[30px] hover:text-slate-300 ">
-            {"<"} Sortera efter pris
-          </a>
-        </Link>
+        <DropDown />
 
         <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Våra Lokaler
