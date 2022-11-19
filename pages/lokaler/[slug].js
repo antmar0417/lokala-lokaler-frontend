@@ -21,7 +21,7 @@ export default function PremisePage({ lkl }) {
 
     return (
       <Layout title="Lokal">
-        <div className="xxs:pb-[90px] cm:pb-[20px] relative pt-[40px] xxs:px-[40px] bcm:px-[0px]  font-ibmRegular bg-backgroundColor">
+        <div className="min-h-[90vh] xxs:pb-[40px] md:pb-[80px] relative pt-[40px] xxs:px-[40px] bcm:px-[0px]  font-ibmRegular bg-backgroundColor">
           <div className=" flex flex-row justify-center items-center ">
             <ToastContainer hideProgressBar={false} pauseOnHover />
 

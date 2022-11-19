@@ -8,7 +8,7 @@ import Search from "@/components/Search";
 export default function PremisesPage({ lokaler, sida, total }) {
   return (
     <Layout title="Lokaler">
-      <div className="bg-backgroundColor ">
+      <div className="bg-backgroundColor min-h-[90vh] xss:pb-[40px] md:pb-[80px]">
         <div className="w-full flex pt-[50px] justify-center items-center ">
           <Search />
         </div>

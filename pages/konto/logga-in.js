@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   return (
     <Layout title="Logga In">
-      <div className="py-16 xxs:pb-[280px] cm:pb-[180px] lg:pb-[200px] bg-backgroundColor px-4 sm:px-6 flex flex-col justify-center items-center font-ibmRegular">
+      <div className="py-16 min-h-[90vh] xss:pb-[40px] md:pb-[80px] bg-backgroundColor px-4 sm:px-6 flex flex-col justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
           <h1 className=" flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">

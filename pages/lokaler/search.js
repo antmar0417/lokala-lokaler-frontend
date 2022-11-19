@@ -11,7 +11,7 @@ export default function SearchPage({ lokaler }) {
 
   return (
     <Layout title="Sök Resultat">
-      <div className=" pt-[40px] min-h-[90vh] pb-[80px] bg-backgroundColor">
+      <div className=" min-h-[90vh] pb-[80px] bg-backgroundColor">
         <div className="flex flex-col justify-center items-center text-white">
           <h1 className=" xxs:text-[24px] md:text-[36px]  ">
             Resultat för {router.query.term}

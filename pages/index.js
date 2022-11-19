@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function HomePage({ lokaler }) {
   return (
     <Layout title="Hem">
-      <div className="bg-backgroundColor min-h-[980px] pb-[40px]">
+      <div className="bg-backgroundColor min-h-[90vh] pb-[80px]">
         <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Senaste Lokaler
         </h1>

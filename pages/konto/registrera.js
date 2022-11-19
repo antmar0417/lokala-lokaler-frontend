@@ -35,7 +35,7 @@ export default function RegisterPage() {
 
   return (
     <Layout title="Registrera">
-      <div className="py-16 bg-backgroundColor xxs:pb-[150px] cm:pb-[90px] lg:pb-[50px] px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
+      <div className="py-16 bg-backgroundColor min-h-[90vh] xss:pb-[40px] md:pb-[80px] px-4 sm:px-6 flex flex-col  justify-center items-center font-ibmRegular">
         <ToastContainer hideProgressBar={false} pauseOnHover />
         <div className="mx-auto w-full max-w-2xl rounded-xl bg-white p-8 shadow">
           <h1 className="flex flex-row justify-center items-center mb-[15px] text-[20px] text-textColor ">
