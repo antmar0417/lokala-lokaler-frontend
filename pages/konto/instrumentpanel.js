@@ -34,7 +34,7 @@ export default function DashboardPage({ premises, token }) {
     <Layout title="instrumentpanel">
       <div className=" bg-backgroundColor min-h-[90vh] xss:pb-[40px] md:pb-[80px]">
         <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
-          Mina Lokaler
+          Välkommen, {premises[0].user.username}
         </h1>
 
         {premises.map((lkl) => (
