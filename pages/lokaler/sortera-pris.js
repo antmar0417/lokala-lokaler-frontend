@@ -14,7 +14,7 @@ export default function SearchPage({ lokaler }) {
       <div className=" min-h-[90vh] pb-[80px] bg-backgroundColor">
         <div className="flex flex-col justify-center items-center text-white">
           <h1 className=" xxs:text-[24px] md:text-[36px] mt-[40px] ">
-            Hittats {lokaler.length}, för max pris {router.query.term}kr.
+            Lediga {lokaler.length}, för max pris {router.query.term}kr.
           </h1>
         </div>
         {lokaler.length === 0 && (

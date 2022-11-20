@@ -10,11 +10,10 @@ export default function PremisesPage({ lokaler, sida, total }) {
   return (
     <Layout title="Lokaler">
       <div className="bg-backgroundColor min-h-[90vh] xss:pb-[40px] md:pb-[80px]">
-        <div className="w-full flex pt-[50px] justify-center items-center ">
+        <div className="w-full flex xxs:flex-col md:flex-row pt-[50px] justify-center items-center ">
           <Search />
+          <DropDown />
         </div>
-
-        <DropDown />
 
         <h1 className="xs:text-[24px] md:text-[40px] text-white pt-[60px] text-left xxs:mx-[20px] bcm:mx-[40px] lg:mx-[100px] xl:mx-[200px] font-ibmRegular">
           Våra Lokaler
