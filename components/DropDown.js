@@ -46,7 +46,7 @@ export default function DropDown() {
                       />
                     )}
                     <Link href="/lokaler/pris">
-                      <a>Sortera efter pris</a>
+                      <a>Max pris</a>
                     </Link>
                   </button>
                 )}
@@ -69,7 +69,9 @@ export default function DropDown() {
                         aria-hidden="true"
                       />
                     )}
-                    Antal personer
+                    <Link href="/lokaler/personer">
+                      <a>Max antal personer</a>
+                    </Link>
                   </button>
                 )}
               </Menu.Item>
