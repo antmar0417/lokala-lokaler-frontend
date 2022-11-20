@@ -56,7 +56,6 @@ module.exports = {
       colors: {
         navbarColor: "#EBEBEB",
         backgroundColor: "#60a5f9",
-        // backgroundColor: "#e7e7e7",
         footerColor: "#EBEBEB",
         premiseItem: "#ffffff",
         textColor: "#4a4a4a",
@@ -70,7 +69,6 @@ module.exports = {
       },
       backgroundImage: {
         "hero-image": "url('/images/hero.jpeg')",
-        // 'footer-texture': "url('/img/footer-texture.png')",
       },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
