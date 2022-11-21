@@ -10,7 +10,7 @@ export default function SearchPage({ lokaler }) {
   const router = useRouter();
 
   return (
-    <Layout title="Sök Resultat">
+    <Layout title="Resultat Max Pris">
       <div className=" min-h-[90vh] pb-[80px] bg-backgroundColor">
         <div className="flex flex-col justify-center items-center text-white">
           <h1 className=" xxs:text-[24px] md:text-[36px] mt-[40px] ">

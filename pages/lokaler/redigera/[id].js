@@ -88,7 +88,6 @@ export default function EditLocalsPage({ lkl, token }) {
   const imageUploaded = async (e) => {
     const res = await fetch(`${API_URL}/api/premises/${id}?populate=*`);
     const data = await res.json();
-    // console.log(data);
 
     // -------------- Setting the image preview --------------
     setImagePreview(

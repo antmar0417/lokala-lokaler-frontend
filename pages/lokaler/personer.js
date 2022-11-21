@@ -8,7 +8,7 @@ import DropDown from "@/components/DropDown";
 
 export default function PremisesPage({ lokaler, sida, total }) {
   return (
-    <Layout title="Lokaler">
+    <Layout title="Ange Max Antal Personer">
       <div className="bg-backgroundColor min-h-[90vh] xss:pb-[40px] md:pb-[80px]">
         <div className="w-full flex xxs:flex-col md:flex-row pt-[50px] justify-center items-center">
           <SearchPersons />
