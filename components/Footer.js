@@ -8,7 +8,7 @@ export default function Footer() {
       </p>
       <p className="my-[5px]">
         <Link href="/om-oss">
-          <a className="text-link hover:text-linkHoverFooter ">
+          <a className="text-[#499afd] hover:text-linkHoverFooter ">
             Om Lokala Lokaler
           </a>
         </Link>
