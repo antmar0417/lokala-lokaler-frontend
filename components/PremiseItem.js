@@ -35,7 +35,7 @@ export default function PremiseItem({ lkl }) {
         <p className=" cm:text-[20px] ">{`Pris ${attributes.price} kr`}</p>
       </div>
 
-      <div className="xs:mt-[10px] md:mt-[0px] xs:pr-[40px] md:pr-[0px] md:justify-self-end">
+      <div className="xs:mt-[10px] md:mt-[0px] md:justify-self-end">
         <Link href={`/lokaler/${attributes.slug}`}>
           <button className="inline-block bg-buttonColor hover:bg-buttonHover  text-white px-[10px] py-[15px] rounded-[5px] cursor-pointer ">
             <a>Mer Info</a>

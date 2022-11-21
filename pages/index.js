@@ -37,7 +37,6 @@ export async function getStaticProps() {
   const res = await fetch(
     `${API_URL}/api/premises?populate=*&pagination[pageSize]=3&sort=createdAt:desc`
   );
-  // const lokaler = await res.json();
   const json = await res.json();
   const lokaler = json.data;
 
