@@ -54,21 +54,15 @@ module.exports = {
     },
     extend: {
       colors: {
-        navbarColor: "#EBEBEB",
         backgroundColor: "#60a5f9",
-        footerColor: "#EBEBEB",
         premiseItem: "#ffffff",
         textColor: "#4a4a4a",
         linkHover: "#e3e3e3",
         buttonColor: "#0088ff",
         buttonHover: "#286eef",
         linkHoverFooter: "#217ff1",
-        link: "#4294f9",
         buttonShowAll: "#313131",
         buttonShowAllHover: "#000000",
-      },
-      backgroundImage: {
-        "hero-image": "url('/images/hero.jpeg')",
       },
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",

@@ -29,7 +29,7 @@ export default function SearchPage({ lokaler }) {
           <PremiseItem key={lkl.id} lkl={lkl} />
         ))}
 
-        <div className="flex flex-row justify-center items-center text-white">
+        <div className="flex flex-row justify-center items-center text-white hover:text-gray-200">
           <Link href="/lokaler/pris">
             <a className=" mt-[40px] ">{"<"} Tillbaka</a>
           </Link>

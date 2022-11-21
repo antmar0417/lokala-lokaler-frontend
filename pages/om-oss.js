@@ -6,7 +6,7 @@ export default function AboutPage(props) {
     <Layout title="Om Lokaler">
       <div className=" pt-[40px] min-h-[90vh] pb-[80px] bg-backgroundColor font-ibmRegular">
         <div className="flex flex-col justify-left xs:text-[16px] md:text-[30px] items-left xxs:px-[20px] bcm:px-[200px] text-white">
-          <p className=" mb-[40px] ">Hej,</p>
+          <p>Hej,</p>
           <p>Vi heter Elvira Persson och Kevin Aho.</p>
           <ContactContent
             text="Kontakt Elvira"
