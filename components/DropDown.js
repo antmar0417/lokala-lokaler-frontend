@@ -46,7 +46,7 @@ export default function DropDown() {
                       />
                     )}
                     <Link href="/lokaler/pris">
-                      <a>Max pris</a>
+                      <a className=" py-[4px] pl-[5px] pr-[110px] ">Max pris</a>
                     </Link>
                   </button>
                 )}
@@ -70,35 +70,15 @@ export default function DropDown() {
                       />
                     )}
                     <Link href="/lokaler/personer">
-                      <a>Max antal personer</a>
+                      <a className=" py-[4px] pl-[5px] pr-[40px] ">
+                        Max antal personer
+                      </a>
                     </Link>
                   </button>
                 )}
               </Menu.Item>
             </div>
             <div className="px-1 py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                  >
-                    {active ? (
-                      <CityActiveIcon
-                        className="mr-2 h-5 w-5"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <CityInactiveIcon
-                        className="mr-2 h-5 w-5"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Stad
-                  </button>
-                )}
-              </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
                   <button
@@ -118,7 +98,9 @@ export default function DropDown() {
                       />
                     )}
                     <Link href="/">
-                      <a>Tillbaka till Hem</a>
+                      <a className=" py-[4px] pl-[5px] pr-[60px] ">
+                        Tillbaka till Hem
+                      </a>
                     </Link>
                   </button>
                 )}
@@ -205,48 +187,6 @@ function PersonActiveIcon(props) {
     >
       <path
         d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"
-        fill="#8B5CF6"
-        stroke="#C4B5FD"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
-function CityInactiveIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 26 26"
-      fill="none"
-      className="w-6 h-6"
-    >
-      <path
-        fillRule="evenodd"
-        d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-        clipRule="evenodd"
-        fill="#EDE9FE"
-        stroke="#A78BFA"
-        strokeWidth="2"
-      />
-    </svg>
-  );
-}
-
-function CityActiveIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 26 26"
-      fill="none"
-      className="w-6 h-6"
-    >
-      <path
-        fillRule="evenodd"
-        d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-        clipRule="evenodd"
         fill="#8B5CF6"
         stroke="#C4B5FD"
         strokeWidth="2"
