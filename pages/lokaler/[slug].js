@@ -54,7 +54,7 @@ export default function PremisePage({ lkl }) {
           </div>
 
           <div className="flex flex-row justify-center items-center text-white">
-            <div className="w-[860px] bg-red-500 mt-[40px] flex xxs:flex-col xxs:items-center xxs:justify-center md:flex-row md:items-start md:justify-between text-white">
+            <div className="w-[860px] mt-[40px] flex xxs:flex-col xxs:items-center xxs:justify-center md:flex-row md:items-start md:justify-between text-white">
               <div className=" xxs:w-[198px] flex flex-col ">
                 <p className=" text-[24px] font-bold">Address</p>
                 <p>{attributes.address}</p>
@@ -66,7 +66,7 @@ export default function PremisePage({ lkl }) {
                 <p>{`${attributes.price} kr`}</p>
               </div>
 
-              <div className="flex flex-col ">
+              <div className="xxs:w-[198px] flex flex-col ">
                 <p className=" text-[24px] font-bold">Kontakt</p>
 
                 <p>
