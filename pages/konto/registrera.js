@@ -124,7 +124,9 @@ export default function RegisterPage() {
               <p className="md:w-[220px] flex xxs:ml-[0px] md:ml-[75px] justify-center items-center xxs:text-[12px] md:text-[16px] ">
                 Har du redan ett konto?{" "}
                 <Link href="/konto/logga-in">
-                  <a className="ml-[5px] text-link">Logga in</a>
+                  <a className="ml-[5px] text-linkBlue hover:text-linkHoverBlue">
+                    Logga in
+                  </a>
                 </Link>
               </p>
             </div>
