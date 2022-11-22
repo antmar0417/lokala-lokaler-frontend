@@ -12,7 +12,7 @@ export default async (req, res) => {
     // ------- Parse the cookie and get the token -------
     const { token } = cookie.parse(req.headers.cookie);
 
-    // ------- Passing the token to strapi route -------
+    // -------- Passing the token to strapi route --------
     const strapiRes = await fetch(`${API_URL}/api/users/me`, {
       method: "GET",
       headers: {
